@@ -1,14 +1,14 @@
 {
-  "nome": "Rádio Embaixadores do Reino",
+  "nome": "The Gospel FM",
   "slogan": "Louvores e mensagens para edificação",
   "descricao": "Programação cristã com louvores, mensagens e reflexões bíblicas.",
-  "programaAtual": "Louvores e Mensagens para Edificação",
-  "streamUrl": "",
+  "programaAtual": "Programação ao vivo",
+  "streamUrl": "https://stream.zeno.fm/zpksre88rm0uv",
   "programacao": [
     {
       "horario": "00:00",
       "programa": "Programação musical",
-      "apresentador": "Rádio Embaixadores do Reino"
+      "apresentador": "The Gospel FM"
     }
   ]
 }
