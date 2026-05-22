@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artigo — Embaixadores do Reino</title>
+  <meta name="description" content="Leia o conteúdo completo no portal Embaixadores do Reino.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <!-- Header do artigo -->
+    <div class="artigo-header">
+      <div class="container">
+        <div class="artigo-categoria-label" id="artigo-categoria">Categoria</div>
+        <h1 id="artigo-titulo">Carregando...</h1>
+        <div class="artigo-meta" id="artigo-meta"></div>
+      </div>
+    </div>
+
+    <!-- Conteúdo do artigo -->
+    <section class="secao secao-areia" style="padding-top:1rem;">
+      <div class="container">
+        <div class="artigo-conteudo" id="artigo-conteudo-texto">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+
+        <!-- Navegação -->
+        <div style="max-width:780px;margin:2rem auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+          <button onclick="history.back()" class="btn btn-contorno">← Voltar</button>
+          <a href="index.html" class="btn btn-principal">🏠 Página Inicial</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artigos relacionados -->
+    <section class="secao secao-clara" id="secao-relacionados">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2>Conteúdo Relacionado</h2>
+        </div>
+        <div class="cards-grid" id="artigos-relacionados"></div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/conteudo.js"></script>
+</body>
+</html>

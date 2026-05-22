@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Embaixadores do Reino — Portal Evangélico</title>
+  <meta name="description" content="Portal evangélico com matérias, mensagens, devocionais diários, estudos bíblicos, Bíblia online e rádio cristã. Edificação e evangelização para toda a família.">
+  <meta name="keywords" content="evangélico, cristão, Bíblia, devocionais, mensagens, rádio gospel, estudos bíblicos">
+  <meta name="author" content="Embaixadores do Reino">
+  <meta property="og:title" content="Embaixadores do Reino — Portal Evangélico">
+  <meta property="og:description" content="Um portal evangélico completo com mensagens, devocionais, Bíblia online e rádio cristã.">
+  <meta property="og:type" content="website">
+  <link rel="alternate" type="application/rss+xml" title="Embaixadores do Reino" href="feed.xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Banner principal">
+      <div class="hero-bg"></div>
+      <div class="hero-pattern"></div>
+      <div class="container">
+        <div class="hero-conteudo">
+          <div class="hero-tag">✝ Portal Evangélico Cristão</div>
+          <h1>Somos <em>Embaixadores</em><br>do Reino de Deus</h1>
+          <p>Um portal de edificação, ensino bíblico e evangelização. Matérias, mensagens, devocionais diários, Bíblia online e muito mais para fortalecer sua fé.</p>
+          <div class="hero-botoes">
+            <a href="mensagens.html" class="btn btn-dourado btn-grande">🎤 Ver Mensagens</a>
+            <button class="btn btn-contorno-branco btn-grande" onclick="Modal.abrir('modal-devocional')">📖 Devocional de Hoje</button>
+            <a href="radio.html" class="btn btn-contorno-branco">📻 Ouvir Rádio</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-versiculo" aria-label="Versículo do dia">
+        <p>Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito...</p>
+        <span>João 3:16</span>
+      </div>
+    </section>
+
+    <!-- BLOCOS RÁPIDOS: RELÓGIO + RÁDIO + BÍBLIA -->
+    <section class="secao secao-clara" style="padding:2.5rem 0;">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 2fr 1fr;gap:1.5rem;align-items:stretch;">
+
+          <!-- Relógio -->
+          <div class="bloco-relogio" role="timer" aria-live="polite">
+            <div class="relogio-icone">🕐</div>
+            <div class="relogio-hora" id="relogio-hora">00:00:00</div>
+            <div class="relogio-data" id="relogio-data">Carregando...</div>
+          </div>
+
+          <!-- Player Rádio Compacto -->
+          <div class="radio-compacto">
+            <div class="radio-status">
+              <span class="radio-ao-vivo">Ao vivo</span>
+              <span class="radio-nome">Rádio Embaixadores do Reino</span>
+            </div>
+            <div class="radio-programa">Louvores e Mensagens para Edificação</div>
+            <div class="radio-controles">
+              <button class="btn-play-pause" aria-label="Play/Pause rádio" title="Play/Pause">▶</button>
+              <div class="radio-volume">
+                <span>🔈</span>
+                <input type="range" class="volume-control" min="0" max="100" value="80" aria-label="Volume">
+                <span>🔊</span>
+              </div>
+              <a href="radio.html" class="btn btn-principal btn-pequeno">Página da Rádio</a>
+            </div>
+          </div>
+
+          <!-- Atalho Bíblia -->
+          <a href="biblia.html" class="bloco-relogio" style="text-decoration:none;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+            <div style="font-size:2.5rem;margin-bottom:0.5rem;">📖</div>
+            <div style="font-family:var(--fonte-titulo);font-size:1.3rem;color:var(--dourado-claro);margin-bottom:0.25rem;">Bíblia Online</div>
+            <div style="font-size:0.85rem;color:rgba(255,255,255,0.75);">Leia a Palavra de Deus</div>
+            <div style="margin-top:1rem;" class="btn btn-dourado btn-pequeno">Abrir Bíblia →</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVOCIONAL DO DIA -->
+    <section class="secao secao-areia">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2>Devocional de Hoje</h2>
+          <p>Uma reflexão diária para alimentar sua alma e renovar sua fé em Deus</p>
+        </div>
+        <div class="devocional-destaque" id="devocional-home">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MATÉRIAS RECENTES -->
+    <section class="secao secao-clara">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2>Matérias Recentes</h2>
+          <p>Conteúdo cristão atualizado para edificar e informar</p>
+        </div>
+        <div class="cards-grid" id="materias-recentes">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+        <div class="ver-mais-centro">
+          <a href="materias.html" class="btn btn-principal">Ver todas as matérias →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MENSAGENS EM DESTAQUE -->
+    <section class="secao secao-areia">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2>Mensagens em Destaque</h2>
+          <p>Palavras ungidas para transformar e edificar sua vida cristã</p>
+        </div>
+        <div class="cards-grid" id="mensagens-destaque">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+        <div class="ver-mais-centro">
+          <a href="mensagens.html" class="btn btn-principal">Ver todas as mensagens →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTUDOS BÍBLICOS -->
+    <section class="secao secao-clara">
+      <div class="container">
+        <div class="secao-titulo">
+          <h2>Estudos Bíblicos</h2>
+          <p>Mergulhe fundo na Palavra de Deus com estudos completos e temáticos</p>
+        </div>
+        <div class="cards-grid" id="estudos-recentes">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+        <div class="ver-mais-centro">
+          <a href="estudos.html" class="btn btn-principal">Ver todos os estudos →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ORAÇÃO E AGENDA -->
+    <section class="secao secao-areia">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+
+          <!-- Pedido de Oração -->
+          <div class="oracao-card">
+            <h2>🙏 Pedido de Oração</h2>
+            <p>Deus ouve cada oração. Envie seu pedido e nossa equipe orará por você com fé e amor.</p>
+            <a href="oracao.html" class="btn btn-contorno-branco btn-grande">Enviar Pedido de Oração</a>
+          </div>
+
+          <!-- Agenda -->
+          <div>
+            <div class="secao-titulo" style="text-align:left;margin-bottom:1.5rem;">
+              <h2>Próximos Eventos</h2>
+            </div>
+            <div id="agenda-home">
+              <div class="loader"><div class="spinner"></div></div>
+            </div>
+            <div style="margin-top:1rem;">
+              <a href="agenda.html" class="btn btn-contorno">Ver agenda completa →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ATALHOS RÁPIDOS -->
+    <section class="secao" style="background:var(--azul-profundo);padding:3rem 0;">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;text-align:center;">
+          <a href="biblia.html" style="color:white;padding:1.5rem;border-radius:var(--borda-raio);background:rgba(255,255,255,0.06);transition:all 0.3s;display:block;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📖</div>
+            <strong style="font-family:var(--fonte-titulo);">Bíblia Online</strong>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">Leia a Palavra</p>
+          </a>
+          <a href="radio.html" style="color:white;padding:1.5rem;border-radius:var(--borda-raio);background:rgba(255,255,255,0.06);transition:all 0.3s;display:block;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📻</div>
+            <strong style="font-family:var(--fonte-titulo);">Rádio</strong>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">Ouça ao vivo</p>
+          </a>
+          <a href="devocionais.html" style="color:white;padding:1.5rem;border-radius:var(--borda-raio);background:rgba(255,255,255,0.06);transition:all 0.3s;display:block;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">🙏</div>
+            <strong style="font-family:var(--fonte-titulo);">Devocionais</strong>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">Reflexões diárias</p>
+          </a>
+          <a href="oracao.html" style="color:white;padding:1.5rem;border-radius:var(--borda-raio);background:rgba(255,255,255,0.06);transition:all 0.3s;display:block;" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">✝</div>
+            <strong style="font-family:var(--fonte-titulo);">Oração</strong>
+            <p style="font-size:0.82rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">Envie seu pedido</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DEVOCIONAL -->
+  <div class="modal-overlay" id="modal-devocional" role="dialog" aria-modal="true" aria-labelledby="modal-dev-titulo">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modal-dev-titulo">Devocional de Hoje</h2>
+        <button class="modal-fechar" aria-label="Fechar modal">✕</button>
+      </div>
+      <div class="modal-corpo" id="modal-dev-corpo">
+        <div class="loader"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/relogio.js"></script>
+  <script src="assets/js/radio.js"></script>
+  <script src="assets/js/conteudo.js"></script>
+</body>
+</html>

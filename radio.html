@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rádio — Embaixadores do Reino</title>
+  <meta name="description" content="Rádio Embaixadores do Reino — programação cristã ao vivo com louvores, mensagens e reflexões bíblicas.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>📻 Rádio Embaixadores do Reino</h1>
+        <p>Programação cristã ao vivo — louvores, mensagens e a Palavra de Deus</p>
+        <div class="breadcrumb"><a href="index.html">Início</a> › Rádio</div>
+      </div>
+    </div>
+
+    <section class="secao secao-areia">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+
+          <!-- Player Principal -->
+          <div>
+            <div class="radio-player-grande">
+              <div class="radio-ao-vivo" style="margin-bottom:1rem;display:inline-flex;">Ao vivo</div>
+              <h2 id="radio-nome-completo" style="color:white;margin-bottom:0.25rem;">Rádio Embaixadores do Reino</h2>
+              <p id="radio-slogan" class="radio-slogan" style="color:var(--dourado-claro);font-size:0.9rem;margin-bottom:1.5rem;"></p>
+
+              <div class="radio-onda pausado">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+              </div>
+
+              <button class="btn-play-grande" aria-label="Play/Pause">▶</button>
+
+              <div class="radio-volume" style="justify-content:center;margin-bottom:1rem;">
+                <span>🔈</span>
+                <input type="range" class="volume-control" min="0" max="100" value="80" style="width:180px;" aria-label="Volume">
+                <span>🔊</span>
+              </div>
+
+              <div class="radio-nome" style="color:white;font-size:1rem;">
+                🎵 <span id="radio-programa-atual" class="radio-programa" style="color:rgba(255,255,255,0.8);"></span>
+              </div>
+            </div>
+
+            <!-- Descrição -->
+            <div style="background:var(--branco);border-radius:var(--borda-raio-grande);padding:1.5rem;box-shadow:var(--sombra-leve);margin-top:1.5rem;">
+              <h3>Sobre a Rádio</h3>
+              <p id="radio-descricao" style="color:var(--cinza-texto);margin-top:0.75rem;"></p>
+              <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--cinza-medio);font-size:0.85rem;color:#7a7a8a;">
+                <p>📧 Para entrar em contato com a rádio ou sugerir programas, acesse nossa <a href="contato.html" style="color:var(--azul-claro);">página de contato</a>.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Programação -->
+          <div>
+            <div style="background:var(--azul-profundo);border-radius:var(--borda-raio-grande);padding:2rem;">
+              <h3 style="color:white;margin-bottom:1.5rem;font-size:1.3rem;">📋 Grade de Programação</h3>
+              <div id="programacao-lista" class="programacao-lista">
+                <div class="loader"><div class="spinner" style="border-top-color:var(--dourado);"></div></div>
+              </div>
+            </div>
+
+            <!-- Instruções de configuração -->
+            <div style="background:var(--branco);border-radius:var(--borda-raio-grande);padding:1.5rem;box-shadow:var(--sombra-leve);margin-top:1.5rem;border-left:4px solid var(--dourado);">
+              <h4 style="color:var(--azul-profundo);margin-bottom:0.75rem;">⚙️ Configurar URL da Rádio</h4>
+              <p style="font-size:0.88rem;color:var(--cinza-texto);">Para trocar o stream, edite o arquivo <code style="background:var(--areia);padding:0.1rem 0.4rem;border-radius:4px;">conteudo/radio.json</code> e altere o campo <code style="background:var(--areia);padding:0.1rem 0.4rem;border-radius:4px;">"streamUrl"</code> com a URL do seu stream de rádio.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/radio.js"></script>
+</body>
+</html>

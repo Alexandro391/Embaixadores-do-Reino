@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Devocionais — Embaixadores do Reino</title>
+  <meta name="description" content="Devocionais diários para nutrir sua vida espiritual com reflexões bíblicas e oração.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>🙏 Devocionais Diários</h1>
+        <p>Reflexões bíblicas para alimentar sua alma a cada dia</p>
+        <div class="breadcrumb"><a href="index.html">Início</a> › Devocionais</div>
+      </div>
+    </div>
+    <section class="secao secao-areia">
+      <div class="container">
+        <!-- Devocional de hoje em destaque -->
+        <div class="secao-titulo" style="text-align:left;margin-bottom:1.5rem;">
+          <h2>Devocional de Hoje</h2>
+        </div>
+        <div class="devocional-destaque" id="devocional-destaque-pagina" style="margin-bottom:3rem;">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+
+        <!-- Lista de devocionais anteriores -->
+        <div class="secao-titulo" style="text-align:left;margin-bottom:1.5rem;">
+          <h2>Devocionais Anteriores</h2>
+        </div>
+        <div class="barra-busca">
+          <div class="campo-busca">
+            <span class="icone-busca">🔍</span>
+            <input type="search" id="busca-devocionais" placeholder="Buscar devocionais..." aria-label="Buscar devocionais">
+          </div>
+        </div>
+        <div class="cards-grid" id="lista-devocionais">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+        <div class="paginacao" id="paginacao-devocionais"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Devocional -->
+  <div class="modal-overlay" id="modal-devocional" role="dialog" aria-modal="true" aria-labelledby="modal-dev-titulo">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modal-dev-titulo">Devocional</h2>
+        <button class="modal-fechar" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-corpo" id="modal-dev-corpo"></div>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/conteudo.js"></script>
+</body>
+</html>

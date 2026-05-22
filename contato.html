@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato — Embaixadores do Reino</title>
+  <meta name="description" content="Entre em contato com o portal Embaixadores do Reino. E-mail, WhatsApp e redes sociais.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>📩 Contato</h1>
+        <p>Estamos aqui para atendê-lo com amor e dedicação</p>
+        <div class="breadcrumb"><a href="index.html">Início</a> › Contato</div>
+      </div>
+    </div>
+
+    <section class="secao secao-areia">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;">
+
+          <!-- Informações de Contato -->
+          <div>
+            <h2 style="margin-bottom:1.5rem;">Fale Conosco</h2>
+            <div class="contato-info-item">
+              <div class="contato-info-icone">📧</div>
+              <div class="contato-info-texto">
+                <strong>E-mail Geral</strong>
+                <a href="mailto:contato@embaixadoresdoreino.com.br">contato@embaixadoresdoreino.com.br</a>
+              </div>
+            </div>
+            <div class="contato-info-item">
+              <div class="contato-info-icone">🙏</div>
+              <div class="contato-info-texto">
+                <strong>E-mail de Oração</strong>
+                <a href="mailto:oracao@embaixadoresdoreino.com.br">oracao@embaixadoresdoreino.com.br</a>
+              </div>
+            </div>
+            <div class="contato-info-item">
+              <div class="contato-info-icone">💬</div>
+              <div class="contato-info-texto">
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/5500000000000" target="_blank">(00) 00000-0000</a>
+              </div>
+            </div>
+            <div class="contato-info-item">
+              <div class="contato-info-icone">📍</div>
+              <div class="contato-info-texto">
+                <strong>Endereço</strong>
+                <a>Rua das Palmeiras, 123 — Centro<br>Cidade, Estado — CEP 00000-000</a>
+              </div>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div style="background:var(--branco);border-radius:var(--borda-raio-grande);padding:1.5rem;box-shadow:var(--sombra-leve);margin-top:1rem;">
+              <h3 style="margin-bottom:1rem;">Nossas Redes Sociais</h3>
+              <div style="display:flex;flex-direction:column;gap:0.75rem;">
+                <a href="#" target="_blank" style="display:flex;align-items:center;gap:0.75rem;color:var(--cinza-texto);padding:0.75rem;border-radius:var(--borda-raio);border:1px solid var(--cinza-medio);transition:all 0.3s;" onmouseover="this.style.borderColor='var(--azul-claro)';this.style.color='var(--azul-profundo)'" onmouseout="this.style.borderColor='var(--cinza-medio)';this.style.color='var(--cinza-texto)'">
+                  <span style="font-size:1.3rem;">📘</span> Facebook — /embaixadoresdoreino
+                </a>
+                <a href="#" target="_blank" style="display:flex;align-items:center;gap:0.75rem;color:var(--cinza-texto);padding:0.75rem;border-radius:var(--borda-raio);border:1px solid var(--cinza-medio);transition:all 0.3s;" onmouseover="this.style.borderColor='var(--azul-claro)';this.style.color='var(--azul-profundo)'" onmouseout="this.style.borderColor='var(--cinza-medio)';this.style.color='var(--cinza-texto)'">
+                  <span style="font-size:1.3rem;">📷</span> Instagram — @embaixadoresdoreino
+                </a>
+                <a href="#" target="_blank" style="display:flex;align-items:center;gap:0.75rem;color:var(--cinza-texto);padding:0.75rem;border-radius:var(--borda-raio);border:1px solid var(--cinza-medio);transition:all 0.3s;" onmouseover="this.style.borderColor='var(--azul-claro)';this.style.color='var(--azul-profundo)'" onmouseout="this.style.borderColor='var(--cinza-medio)';this.style.color='var(--cinza-texto)'">
+                  <span style="font-size:1.3rem;">▶️</span> YouTube — @embaixadoresdoreino
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário de Contato -->
+          <div style="background:var(--branco);border-radius:var(--borda-raio-grande);padding:2.5rem;box-shadow:var(--sombra-media);">
+            <h2 style="margin-bottom:0.5rem;">Envie uma mensagem</h2>
+            <p style="color:var(--cinza-texto);margin-bottom:2rem;font-size:0.95rem;">Responderemos em até 48 horas.</p>
+            <div class="form-grupo">
+              <label for="c-nome">Nome *</label>
+              <input type="text" id="c-nome" placeholder="Seu nome completo" required>
+            </div>
+            <div class="form-grupo">
+              <label for="c-email">E-mail *</label>
+              <input type="email" id="c-email" placeholder="seu@email.com" required>
+            </div>
+            <div class="form-grupo">
+              <label for="c-assunto">Assunto *</label>
+              <select id="c-assunto">
+                <option value="">Selecione o assunto...</option>
+                <option>Pedido de Oração</option>
+                <option>Parceria / Publicidade</option>
+                <option>Sugestão de Conteúdo</option>
+                <option>Informações Gerais</option>
+                <option>Outros</option>
+              </select>
+            </div>
+            <div class="form-grupo">
+              <label for="c-mensagem">Mensagem *</label>
+              <textarea id="c-mensagem" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+            </div>
+            <button onclick="enviarContato()" class="btn btn-principal" style="width:100%;justify-content:center;">📧 Enviar Mensagem</button>
+            <div class="privacidade-aviso" style="margin-top:1rem;">
+              <span>🔒</span>
+              <p style="margin:0;font-size:0.82rem;">Seus dados são protegidos e não serão compartilhados. Consulte nossa <a href="privacidade.html" style="color:var(--azul-claro);">Política de Privacidade</a>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    function enviarContato() {
+      const nome = document.getElementById('c-nome').value.trim();
+      const email = document.getElementById('c-email').value.trim();
+      const assunto = document.getElementById('c-assunto').value;
+      const mensagem = document.getElementById('c-mensagem').value.trim();
+      if (!nome || !email || !mensagem) { alert('Por favor, preencha todos os campos obrigatórios.'); return; }
+      const subj = encodeURIComponent(`[${assunto || 'Contato'}] ${nome}`);
+      const body = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\nAssunto: ${assunto}\n\nMensagem:\n${mensagem}`);
+      window.location.href = `mailto:contato@embaixadoresdoreino.com.br?subject=${subj}&body=${body}`;
+    }
+  </script>
+</body>
+</html>

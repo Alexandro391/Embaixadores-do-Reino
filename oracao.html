@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido de Oração — Embaixadores do Reino</title>
+  <meta name="description" content="Envie seu pedido de oração. Nossa equipe orará por você com fé e amor.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>🙏 Pedido de Oração</h1>
+        <p>Envie seu pedido e nossa equipe orará por você</p>
+        <div class="breadcrumb"><a href="index.html">Início</a> › Pedido de Oração</div>
+      </div>
+    </div>
+
+    <section class="secao secao-areia">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;">
+
+          <!-- Versículos de encorajamento -->
+          <div>
+            <div class="devocional-destaque" style="margin-bottom:1.5rem;">
+              <div class="devocional-versiculo">"A oração do justo é poderosa e eficaz."</div>
+              <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Tiago 5:16</p>
+            </div>
+            <div class="devocional-destaque">
+              <div class="devocional-versiculo">"Não andeis ansiosos de coisa alguma; antes, em tudo, fazei conhecidas as vossas petições a Deus..."</div>
+              <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Filipenses 4:6</p>
+            </div>
+            <div style="background:var(--branco);border-radius:var(--borda-raio-grande);padding:2rem;box-shadow:var(--sombra-leve);margin-top:1.5rem;">
+              <h3>Como funciona?</h3>
+              <div style="margin-top:1rem;">
+                <div style="display:flex;gap:1rem;margin-bottom:1rem;">
+                  <div style="width:36px;height:36px;border-radius:50%;background:var(--azul-profundo);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">1</div>
+                  <p style="margin:0;padding-top:0.4rem;">Preencha o formulário com seu nome e pedido</p>
+                </div>
+                <div style="display:flex;gap:1rem;margin-bottom:1rem;">
+                  <div style="width:36px;height:36px;border-radius:50%;background:var(--azul-profundo);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">2</div>
+                  <p style="margin:0;padding-top:0.4rem;">Seu pedido é recebido pela nossa equipe de intercessores</p>
+                </div>
+                <div style="display:flex;gap:1rem;">
+                  <div style="width:36px;height:36px;border-radius:50%;background:var(--dourado);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;">3</div>
+                  <p style="margin:0;padding-top:0.4rem;">Nossa equipe ora por você com fé e amor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formulário -->
+          <div style="background:var(--branco);border-radius:var(--borda-raio-grande);padding:2.5rem;box-shadow:var(--sombra-media);">
+            <h2 style="margin-bottom:0.5rem;">Envie seu pedido</h2>
+            <p style="color:var(--cinza-texto);margin-bottom:2rem;font-size:0.95rem;">Deus ouve cada oração. Seja específico e confie Nele.</p>
+
+            <div id="form-oracao-opcoes" style="display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap;">
+              <button onclick="mostrarFormEmail()" id="btn-email" class="btn btn-principal">📧 Enviar por E-mail</button>
+              <button onclick="mostrarFormWhatsApp()" id="btn-wpp" class="btn btn-contorno">💬 Via WhatsApp</button>
+            </div>
+
+            <!-- Formulário Email (mailto) -->
+            <div id="form-email" style="display:block;">
+              <div class="form-grupo">
+                <label for="oracao-nome">Seu nome *</label>
+                <input type="text" id="oracao-nome" placeholder="Como prefere ser chamado?" required>
+              </div>
+              <div class="form-grupo">
+                <label for="oracao-email">E-mail (opcional)</label>
+                <input type="email" id="oracao-email" placeholder="seu@email.com">
+              </div>
+              <div class="form-grupo">
+                <label for="oracao-pedido">Seu pedido de oração *</label>
+                <textarea id="oracao-pedido" rows="6" placeholder="Compartilhe aqui o seu pedido com sinceridade. Deus ouve cada palavra..." required></textarea>
+              </div>
+              <button onclick="enviarPedidoEmail()" class="btn btn-principal" style="width:100%;justify-content:center;">🙏 Enviar Pedido de Oração</button>
+            </div>
+
+            <!-- WhatsApp -->
+            <div id="form-whatsapp" style="display:none;">
+              <div class="form-grupo">
+                <label for="wpp-nome">Seu nome *</label>
+                <input type="text" id="wpp-nome" placeholder="Como prefere ser chamado?">
+              </div>
+              <div class="form-grupo">
+                <label for="wpp-pedido">Seu pedido de oração *</label>
+                <textarea id="wpp-pedido" rows="6" placeholder="Compartilhe aqui o seu pedido..."></textarea>
+              </div>
+              <button onclick="enviarPedidoWhatsApp()" class="btn btn-dourado" style="width:100%;justify-content:center;background:linear-gradient(135deg,#128C7E,#25D366);">💬 Enviar pelo WhatsApp</button>
+            </div>
+
+            <div class="privacidade-aviso">
+              <span>🔒</span>
+              <p style="margin:0;">Seus dados são tratados com total respeito e privacidade. Não compartilhamos seus pedidos sem sua autorização.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    function mostrarFormEmail() {
+      document.getElementById('form-email').style.display = 'block';
+      document.getElementById('form-whatsapp').style.display = 'none';
+      document.getElementById('btn-email').className = 'btn btn-principal';
+      document.getElementById('btn-wpp').className = 'btn btn-contorno';
+    }
+    function mostrarFormWhatsApp() {
+      document.getElementById('form-email').style.display = 'none';
+      document.getElementById('form-whatsapp').style.display = 'block';
+      document.getElementById('btn-wpp').className = 'btn btn-principal';
+      document.getElementById('btn-email').className = 'btn btn-contorno';
+    }
+    function enviarPedidoEmail() {
+      const nome = document.getElementById('oracao-nome').value.trim();
+      const email = document.getElementById('oracao-email').value.trim();
+      const pedido = document.getElementById('oracao-pedido').value.trim();
+      if (!nome || !pedido) { alert('Por favor, preencha seu nome e o pedido de oração.'); return; }
+      const assunto = encodeURIComponent(`Pedido de Oração — ${nome}`);
+      const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email || 'Não informado'}\n\nPedido de Oração:\n${pedido}`);
+      window.location.href = `mailto:oracao@embaixadoresdoreino.com.br?subject=${assunto}&body=${corpo}`;
+    }
+    function enviarPedidoWhatsApp() {
+      const nome = document.getElementById('wpp-nome').value.trim();
+      const pedido = document.getElementById('wpp-pedido').value.trim();
+      if (!nome || !pedido) { alert('Por favor, preencha seu nome e o pedido de oração.'); return; }
+      const msg = encodeURIComponent(`🙏 *Pedido de Oração*\n\n*Nome:* ${nome}\n\n*Pedido:*\n${pedido}\n\n_Enviado pelo portal Embaixadores do Reino_`);
+      window.open(`https://wa.me/5500000000000?text=${msg}`, '_blank');
+    }
+  </script>
+</body>
+</html>

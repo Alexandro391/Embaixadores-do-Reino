@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bíblia Online — Embaixadores do Reino</title>
+  <meta name="description" content="Leia a Bíblia Sagrada online. Selecione livro e capítulo, busque versículos e compartilhe a Palavra de Deus.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>📜 Bíblia Online</h1>
+        <p>Leia, busque e compartilhe a Palavra de Deus</p>
+        <div class="breadcrumb"><a href="index.html">Início</a> › Bíblia Online</div>
+      </div>
+    </div>
+
+    <section class="secao secao-areia">
+      <div class="container">
+
+        <!-- Controles -->
+        <div class="biblia-controles">
+          <div class="biblia-selecoes">
+            <div class="form-grupo" style="margin-bottom:0;">
+              <label for="select-livro">📚 Livro</label>
+              <select id="select-livro" aria-label="Selecionar livro bíblico">
+                <option value="">Selecione um livro...</option>
+              </select>
+            </div>
+            <div class="form-grupo" style="margin-bottom:0;">
+              <label for="select-capitulo">📖 Capítulo</label>
+              <select id="select-capitulo" aria-label="Selecionar capítulo">
+                <option value="">—</option>
+              </select>
+            </div>
+            <div class="form-grupo" style="margin-bottom:0;">
+              <label for="busca-biblia">🔍 Buscar versículo</label>
+              <input type="search" id="busca-biblia" placeholder="Digite uma palavra..." aria-label="Buscar versículo">
+            </div>
+          </div>
+
+          <!-- Navegação de capítulos -->
+          <div style="display:flex;gap:1rem;justify-content:center;margin-top:1rem;">
+            <button id="btn-cap-anterior" class="btn btn-contorno btn-pequeno" disabled>← Capítulo anterior</button>
+            <button id="btn-cap-proximo" class="btn btn-contorno btn-pequeno" disabled>Próximo capítulo →</button>
+          </div>
+        </div>
+
+        <!-- Área de texto -->
+        <div class="biblia-texto">
+          <div class="biblia-titulo" id="biblia-titulo-cap">Bíblia Online — Selecione um livro</div>
+          <div id="biblia-versiculos">
+            <div class="estado-vazio">
+              <div class="icone">📖</div>
+              <p>Selecione um livro e capítulo para começar a leitura.</p>
+              <p style="font-size:0.9rem;margin-top:0.5rem;color:#aaa;">Clique em qualquer versículo para ver opções de cópia e compartilhamento.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dica -->
+        <div style="text-align:center;margin-top:2rem;padding:1.5rem;background:var(--branco);border-radius:var(--borda-raio);box-shadow:var(--sombra-leve);">
+          <p style="color:var(--cinza-texto);font-size:0.9rem;">💡 <strong>Dica:</strong> Clique em qualquer versículo para copiá-lo ou compartilhá-lo. Use a busca para encontrar palavras específicas no livro selecionado.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal de Versículo -->
+  <div class="modal-overlay" id="modal-versiculo" role="dialog" aria-modal="true">
+    <div class="modal" style="max-width:520px;">
+      <div class="modal-header">
+        <h2 id="modal-ver-ref">Versículo</h2>
+        <button class="modal-fechar" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-corpo">
+        <div class="modal-versiculo" id="modal-ver-texto" style="font-size:1.15rem;"></div>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <button id="btn-copiar-ver" class="btn btn-principal btn-pequeno">📋 Copiar versículo</button>
+          <button id="btn-compartilhar-ver" class="btn btn-dourado btn-pequeno">📤 Compartilhar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-container"></div>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/biblia.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Embaixadores do Reino</title>
+    <link>https://embaixadoresdoreino.com.br</link>
+    <description>Portal evangélico com matérias, mensagens, devocionais e estudos bíblicos.</description>
+    <language>pt-BR</language>
+    <atom:link href="https://embaixadoresdoreino.com.br/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Como fortalecer a fé em tempos difíceis</title>
+      <link>https://embaixadoresdoreino.com.br/artigo.html?tipo=materias&amp;id=1</link>
+      <description>Uma reflexão bíblica sobre confiança, perseverança e esperança diante dos desafios da vida.</description>
+      <pubDate>Wed, 21 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://embaixadoresdoreino.com.br/artigo.html?tipo=materias&amp;id=1</guid>
+    </item>
+    <item>
+      <title>Deus tem um plano para sua vida</title>
+      <link>https://embaixadoresdoreino.com.br/artigo.html?tipo=mensagens&amp;id=1</link>
+      <description>Jeremias 29:11 revela que Deus conhece os planos que tem para você — planos de prosperidade e esperança.</description>
+      <pubDate>Wed, 21 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://embaixadoresdoreino.com.br/artigo.html?tipo=mensagens&amp;id=1</guid>
+    </item>
+    <item>
+      <title>Rendendo-se à presença de Deus — Devocional</title>
+      <link>https://embaixadoresdoreino.com.br/artigo.html?tipo=devocionais&amp;id=1</link>
+      <description>Em meio à correria do dia, Deus nos convida a parar e reconhecer Sua soberania. Salmo 46:10.</description>
+      <pubDate>Wed, 21 May 2026 00:00:00 +0000</pubDate>
+      <guid>https://embaixadoresdoreino.com.br/artigo.html?tipo=devocionais&amp;id=1</guid>
+    </item>
+  </channel>
+</rss>

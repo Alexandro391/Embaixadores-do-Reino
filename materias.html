@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matérias — Embaixadores do Reino</title>
+  <meta name="description" content="Matérias cristãs sobre fé, família, oração, salvação e vida cristã. Conteúdo bíblico e edificante.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+</head>
+<body>
+  <div id="header-container"></div>
+  <main>
+    <div class="page-banner">
+      <div class="container">
+        <h1>📰 Matérias</h1>
+        <p>Conteúdo cristão para edificar, informar e inspirar</p>
+        <div class="breadcrumb"><a href="index.html">Início</a> › Matérias</div>
+      </div>
+    </div>
+    <section class="secao secao-areia">
+      <div class="container">
+        <div class="barra-busca">
+          <div class="campo-busca">
+            <span class="icone-busca">🔍</span>
+            <input type="search" id="busca-materias" placeholder="Buscar matérias..." aria-label="Buscar matérias">
+          </div>
+        </div>
+        <div class="filtros" id="filtros-materias"></div>
+        <div class="cards-grid" id="lista-materias">
+          <div class="loader"><div class="spinner"></div></div>
+        </div>
+        <div class="paginacao" id="paginacao-materias"></div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-container"></div>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/conteudo.js"></script>
+</body>
+</html>
