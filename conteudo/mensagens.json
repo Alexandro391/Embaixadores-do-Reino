@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "id": 1,
+    "titulo": "A fé que vence o medo",
+    "categoria": "Fé",
+    "data": "2026-05-22",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Uma mensagem sobre confiar em Deus quando o medo tenta dominar o coração.",
+    "conteudo": "O medo é uma experiência humana, mas ele não precisa governar a vida do cristão. A fé nos conduz a olhar para Deus acima das circunstâncias.\n\nQuando confiamos no Senhor, aprendemos que a segurança verdadeira não está no controle que temos, mas na presença de Deus conosco.\n\nA fé que vence o medo não ignora os desafios. Ela escolhe crer que Deus permanece fiel em meio a eles.",
+    "tags": [
+      "fé",
+      "coragem",
+      "confiança"
+    ],
+    "destaque": true
+  },
+  {
+    "id": 2,
+    "titulo": "Deus ainda cuida de você",
+    "categoria": "Encorajamento",
+    "data": "2026-05-21",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Uma palavra de encorajamento para lembrar que Deus não abandona os seus filhos.",
+    "conteudo": "Há momentos em que o silêncio parece pesado, mas o cuidado de Deus não desaparece. Ele sustenta, consola e conduz mesmo quando não entendemos todos os detalhes do caminho.\n\nO cuidado de Deus pode ser percebido na força para continuar, na paz que excede a lógica e nas portas que Ele abre no tempo certo.\n\nContinue firme. Deus vê, Deus sabe e Deus cuida.",
+    "tags": [
+      "cuidado",
+      "esperança",
+      "consolo"
+    ],
+    "destaque": true
+  },
+  {
+    "id": 3,
+    "titulo": "Chamados para ser luz",
+    "categoria": "Missão",
+    "data": "2026-05-20",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Uma mensagem sobre testemunho cristão, serviço e compromisso com o Reino de Deus.",
+    "conteudo": "Jesus chamou seus discípulos para viverem como luz no mundo. Isso envolve palavras, atitudes e escolhas que apontam para a verdade do Evangelho.\n\nSer luz não significa perfeição exterior, mas uma vida rendida a Cristo, marcada por amor, justiça, perdão e serviço.\n\nOnde Deus nos colocou, ali também existe uma oportunidade de testemunhar sua graça.",
+    "tags": [
+      "missão",
+      "testemunho",
+      "luz"
+    ],
+    "destaque": true
+  }
+]
+
