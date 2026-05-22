@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": 1,
+    "titulo": "Confiança para hoje",
+    "categoria": "Devocional",
+    "data": "2026-05-22",
+    "autor": "Embaixadores do Reino",
+    "versiculo": "Entrega o teu caminho ao Senhor; confia nele, e ele tudo fará. Salmos 37:5",
+    "resumo": "Entregar o caminho ao Senhor é descansar na fidelidade de Deus enquanto caminhamos em obediência.",
+    "conteudo": "Nem sempre conseguimos controlar o que acontece ao nosso redor. Ainda assim, podemos escolher entregar nossos caminhos ao Senhor.\n\nConfiar em Deus não é passividade. É caminhar com responsabilidade, mas sem carregar sozinho o peso que pertence ao Senhor.\n\nOre hoje entregando suas preocupações a Deus. Peça sabedoria para agir e fé para descansar no cuidado dele.",
+    "tags": [
+      "confiança",
+      "oração",
+      "descanso"
+    ],
+    "destaque": true
+  },
+  {
+    "id": 2,
+    "titulo": "Renovação pela Palavra",
+    "categoria": "Devocional",
+    "data": "2026-05-21",
+    "autor": "Embaixadores do Reino",
+    "versiculo": "Lâmpada para os meus pés é tua palavra, e luz para o meu caminho. Salmos 119:105",
+    "resumo": "A Palavra de Deus ilumina decisões, corrige rotas e fortalece o coração.",
+    "conteudo": "A Palavra de Deus traz direção para a vida. Quando lemos as Escrituras com atenção e fé, recebemos orientação para escolhas, consolo para a alma e correção para o caminho.\n\nSepare um tempo para ouvir Deus por meio da Bíblia. Nem sempre a resposta vem como desejamos, mas a Palavra sempre nos conduz à verdade.\n\nPermita que a Escritura ilumine seus passos hoje.",
+    "tags": [
+      "Bíblia",
+      "direção",
+      "renovação"
+    ],
+    "destaque": false
+  }
+]
