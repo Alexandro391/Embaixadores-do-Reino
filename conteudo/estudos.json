@@ -1,1 +1,53 @@
-[]
+[][
+  {
+    "id": 1,
+    "titulo": "O que é fé segundo a Bíblia",
+    "categoria": "Doutrina",
+    "data": "2026-05-22",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Um estudo introdutório sobre o significado bíblico da fé e sua aplicação na vida cristã.",
+    "conteudo": "INTRODUÇÃO\nA fé bíblica não é apenas otimismo. É confiança em Deus, baseada em quem Ele é e naquilo que Ele revelou em sua Palavra.\n\n1. A FÉ SE APOIA EM DEUS\nA fé cristã tem fundamento no caráter de Deus. Ela não depende das emoções do momento, mas da fidelidade do Senhor.\n\n2. A FÉ PRODUZ OBEDIÊNCIA\nCrer em Deus se reflete em atitudes. A fé verdadeira influencia decisões, relacionamentos e prioridades.\n\nCONCLUSÃO\nA fé bíblica conduz o cristão a confiar, obedecer e perseverar em Deus.",
+    "tags": [
+      "fé",
+      "doutrina",
+      "Bíblia"
+    ],
+    "nivel": "Básico",
+    "duracao": "10 min",
+    "destaque": true
+  },
+  {
+    "id": 2,
+    "titulo": "Introdução à oração cristã",
+    "categoria": "Vida Devocional",
+    "data": "2026-05-21",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Um estudo simples sobre oração, comunhão com Deus e disciplina espiritual.",
+    "conteudo": "INTRODUÇÃO\nA oração é parte essencial da vida cristã. Ela expressa dependência, adoração, arrependimento e comunhão com Deus.\n\n1. ORAÇÃO É RELACIONAMENTO\nO cristão ora porque conhece a Deus como Pai. A oração aproxima o coração da vontade do Senhor.\n\n2. ORAÇÃO EXIGE CONSTÂNCIA\nA disciplina na oração fortalece a fé e ajuda a enfrentar desafios com mais maturidade espiritual.\n\nCONCLUSÃO\nOrar é caminhar com Deus em todos os momentos da vida.",
+    "tags": [
+      "oração",
+      "devocional",
+      "comunhão"
+    ],
+    "nivel": "Básico",
+    "duracao": "8 min",
+    "destaque": false
+  },
+  {
+    "id": 3,
+    "titulo": "O fruto do Espírito na vida diária",
+    "categoria": "Santificação",
+    "data": "2026-05-20",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Um estudo sobre caráter cristão e transformação pela ação do Espírito Santo.",
+    "conteudo": "INTRODUÇÃO\nO fruto do Espírito revela a transformação que Deus realiza no coração do cristão. Ele aparece nas atitudes diárias, nos relacionamentos e nas escolhas.\n\n1. CARÁTER TRANSFORMADO\nAmor, alegria, paz, paciência e domínio próprio não são apenas qualidades humanas. São evidências da ação de Deus em nós.\n\n2. VIDA PRÁTICA\nO fruto do Espírito se manifesta em casa, no trabalho, na igreja e em todos os ambientes onde vivemos.\n\nCONCLUSÃO\nA vida cristã é uma caminhada de crescimento e dependência do Espírito Santo.",
+    "tags": [
+      "Espírito Santo",
+      "santificação",
+      "caráter"
+    ],
+    "nivel": "Intermediário",
+    "duracao": "12 min",
+    "destaque": false
+  }
+]
