@@ -1,1 +1,48 @@
-[]
+[
+  {
+    "id": 1,
+    "titulo": "Como manter a fé em tempos difíceis",
+    "categoria": "Vida Cristã",
+    "data": "2026-05-22",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Uma reflexão sobre perseverança, oração e confiança em Deus nos dias de adversidade.",
+    "conteudo": "A fé cristã não depende da ausência de problemas, mas da confiança em Deus mesmo quando as circunstâncias parecem contrárias. Em tempos difíceis, somos chamados a buscar direção na Palavra, permanecer em oração e caminhar com perseverança.\n\nManter a fé também exige disciplina espiritual. A leitura bíblica, a comunhão com outros irmãos e a prática da gratidão ajudam o coração a não ser dominado pelo medo.\n\nDeus continua presente. A caminhada pode ser desafiadora, mas a esperança em Cristo sustenta a alma e orienta nossas decisões.",
+    "tags": [
+      "fé",
+      "esperança",
+      "vida cristã"
+    ],
+    "destaque": true
+  },
+  {
+    "id": 2,
+    "titulo": "A importância da oração diária",
+    "categoria": "Oração",
+    "data": "2026-05-21",
+    "autor": "Embaixadores do Reino",
+    "resumo": "A oração fortalece a intimidade com Deus e ajuda o cristão a viver com mais direção espiritual.",
+    "conteudo": "A oração é mais do que uma prática religiosa. É relacionamento com Deus. Por meio dela, apresentamos nossas necessidades, confessamos nossas fraquezas e alinhamos o coração à vontade do Senhor.\n\nUma vida de oração não precisa ser marcada por palavras complicadas. Deus ouve o coração sincero. Separar um tempo diário para orar ajuda a fortalecer a fé e a discernir melhor as decisões da vida.\n\nQuem ora aprende a depender menos da própria força e mais da graça de Deus.",
+    "tags": [
+      "oração",
+      "comunhão",
+      "disciplina"
+    ],
+    "destaque": false
+  },
+  {
+    "id": 3,
+    "titulo": "Servir a Deus com fidelidade",
+    "categoria": "Serviço Cristão",
+    "data": "2026-05-20",
+    "autor": "Embaixadores do Reino",
+    "resumo": "Servir no Reino é uma expressão de amor, obediência e compromisso com Cristo.",
+    "conteudo": "Servir a Deus não é apenas ocupar uma função. É uma resposta de amor ao que Cristo fez por nós. Cada talento, recurso e oportunidade pode ser usado para glorificar o Senhor e abençoar pessoas.\n\nA fidelidade no serviço cristão aparece nas pequenas atitudes. A constância, a humildade e a disposição para ajudar revelam um coração comprometido com o Reino.\n\nDeus valoriza o serviço feito com sinceridade, mesmo quando ninguém vê.",
+    "tags": [
+      "serviço",
+      "fidelidade",
+      "reino"
+    ],
+    "destaque": false
+  }
+]
+
