@@ -1,0 +1,140 @@
+/* =========================================
+   EMBAIXADORES DO REINO — CSS Responsivo
+   responsivo.css
+   ========================================= */
+
+/* Tablet grande (1024px) */
+@media (max-width: 1024px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .biblia-selecoes { grid-template-columns: 1fr 1fr; }
+  .hero-versiculo { display: none; }
+  .nav-desktop a { font-size: 0.78rem; padding: 0.45rem 0.55rem; }
+}
+
+/* Tablet (768px) */
+@media (max-width: 768px) {
+  :root { --header-altura: 64px; }
+  .nav-desktop { display: none; }
+  .btn-menu-mobile { display: flex; }
+  .nav-mobile { display: block; }
+
+  .hero { min-height: 75vh; padding: 3rem 0; }
+  .hero h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); }
+  .secao { padding: 3.5rem 0; }
+
+  .cards-grid { grid-template-columns: 1fr; }
+  .cards-grid-2 { grid-template-columns: 1fr; }
+
+  .devocional-destaque { padding: 2rem; }
+  .devocional-destaque::before { font-size: 8rem; }
+
+  .artigo-conteudo { padding: 2rem 1.5rem; margin-top: -2rem; }
+  .artigo-header { padding: 3rem 0 5rem; }
+
+  .biblia-selecoes { grid-template-columns: 1fr; }
+  .biblia-texto { padding: 1.5rem; }
+
+  .radio-player-grande { padding: 2rem 1.5rem; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .oracao-card { padding: 2rem; }
+
+  .modal { margin: 0; border-radius: var(--borda-raio); }
+  .modal-header { padding: 1.25rem 1.5rem; }
+  .modal-corpo { padding: 1.5rem; }
+
+  .sobre-lider { flex-direction: column; }
+  .bloco-relogio .relogio-hora { font-size: 2.2rem; }
+
+  #btn-topo { bottom: 1.5rem; right: 1.5rem; width: 42px; height: 42px; }
+  .hero-botoes { flex-direction: column; align-items: flex-start; }
+  .hero-botoes .btn { width: 100%; justify-content: center; }
+}
+
+/* Mobile (480px) */
+@media (max-width: 480px) {
+  .container { padding: 0 1rem; }
+  .secao { padding: 2.5rem 0; }
+  .secao-titulo { margin-bottom: 2rem; }
+
+  .logo-texto .nome { font-size: 0.95rem; }
+  .logo-texto .slogan { display: none; }
+
+  .btn { padding: 0.7rem 1.4rem; font-size: 0.82rem; }
+  .btn-grande { padding: 0.85rem 1.75rem; font-size: 0.9rem; }
+
+  .card-corpo { padding: 1.25rem; }
+  .evento-card { flex-direction: column; }
+  .evento-data-bloco { width: 100%; display: flex; gap: 0.5rem; align-items: center; }
+  .evento-dia { font-size: 1.3rem; }
+
+  .barra-busca { flex-direction: column; }
+  .campo-busca { min-width: unset; }
+
+  .artigo-conteudo { padding: 1.5rem 1rem; }
+  .artigo-conteudo p { font-size: 1rem; }
+
+  .devocional-versiculo { font-size: 1.1rem; }
+  .devocional-destaque { padding: 1.5rem; }
+
+  .radio-controles { flex-wrap: wrap; }
+  .programacao-lista .programa-item { flex-direction: column; gap: 0.4rem; }
+
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-coluna { display: none; }
+  .footer-coluna:first-child { display: block; }
+  .footer-coluna:nth-child(2) { display: block; }
+
+  .biblia-texto { padding: 1.25rem; }
+  .versiculo-texto { font-size: 1rem; }
+
+  .paginacao { gap: 0.3rem; }
+  .btn-pag { width: 36px; height: 36px; font-size: 0.82rem; }
+
+  .mv-card { padding: 1.5rem; }
+  .cards-grid { gap: 1.25rem; }
+}
+
+/* Print */
+@media print {
+  #header, #footer, #btn-topo, .btn-menu-mobile, .nav-mobile, .barra-busca, .filtros, .paginacao { display: none !important; }
+  main { margin-top: 0; }
+  .artigo-conteudo { box-shadow: none; margin-top: 0; }
+  body { font-size: 12pt; }
+}
+
+/* Acessibilidade — foco visível */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+
+/* Redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Grids inline da home */
+@media (max-width: 900px) {
+  .home-blocos-rapidos { grid-template-columns: 1fr !important; }
+  .home-oracao-agenda { grid-template-columns: 1fr !important; }
+  .home-atalhos { grid-template-columns: repeat(2,1fr) !important; }
+  .sobre-mvv { grid-template-columns: 1fr !important; }
+  .sobre-equipe { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  [style*="grid-template-columns: 1fr 2fr 1fr"],
+  [style*="grid-template-columns:1fr 2fr 1fr"] { grid-template-columns: 1fr !important; display: flex !important; flex-direction: column !important; }
+  [style*="grid-template-columns: 1fr 1fr"],
+  [style*="grid-template-columns:1fr 1fr"],
+  [style*="grid-template-columns: repeat(3,1fr)"],
+  [style*="grid-template-columns: repeat(4,1fr)"],
+  [style*="grid-template-columns:repeat(3,1fr)"],
+  [style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 480px) {
+  [style*="grid-template-columns: repeat(2,1fr)"],
+  [style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+}
