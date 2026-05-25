@@ -1,4 +1,5 @@
- {
+[
+  {
     "id": 3,
     "titulo": "Força no cansaço",
     "categoria": "Devocional",
@@ -7,8 +8,13 @@
     "versiculo": "Os que esperam no Senhor renovam as suas forças, sobem com asas como águias. Isaías 40:31",
     "resumo": "Quando nossas forças acabam, a espera em Deus não é fraqueza — é o lugar onde a renovação começa.",
     "conteudo": "Há momentos em que a vida pesa mais do que o esperado. O corpo cansa, a mente se esgota, e o coração parece não ter mais reservas para continuar.\n\nIsaías não promete que o cansaço nunca chegará. Ele aponta para onde a força verdadeira é encontrada: na espera diante do Senhor. Essa espera não é cruzar os braços — é depositar o peso sobre Deus e permanecer conectado a Ele em oração e na Palavra.\n\nAs águias não lutam contra o vento para subir — elas abrem as asas e deixam a corrente de ar as elevar. Assim é a fé: não é o esforço que nos sustenta, mas a graça de Deus que nos carrega.\n\nSe você está cansado hoje, não tente resolver tudo sozinho. Venha ao Senhor. Descanse na presença dele. A renovação vem de cima.",
-    "tags": ["força", "descanso", "esperança", "cansaço"],
-    "destaque": False
+    "tags": [
+      "força",
+      "descanso",
+      "esperança",
+      "cansaço"
+    ],
+    "destaque": false
   },
   {
     "id": 4,
@@ -19,8 +25,13 @@
     "versiculo": "Em tudo dai graças, porque esta é a vontade de Deus em Cristo Jesus para convosco. 1 Tessalonicenses 5:18",
     "resumo": "Gratidão não depende das circunstâncias — nasce da certeza de quem Deus é e do que ele já fez por nós.",
     "conteudo": "Paulo escreveu sobre gratidão de dentro de uma prisão. Não em dias de abundância, mas em dias de restrição e incerteza. Isso revela algo profundo: a gratidão cristã não é filha das circunstâncias — é filha da fé.\n\nDar graças em tudo não significa fingir que tudo está bem. Significa enxergar que, mesmo no que dói, Deus está presente e soberano. Significa lembrar do que ele já fez, e confiar no que ele ainda fará.\n\nA gratidão transforma o coração. Ela desloca o olhar do problema para o Provedor, do que falta para o que foi dado, do presente incerto para o futuro garantido em Cristo.\n\nHoje, antes de listar o que ainda precisa, liste o que Deus já fez. A gratidão abre espaço para a paz.",
-    "tags": ["gratidão", "fé", "circunstâncias", "paz"],
-    "destaque": False
+    "tags": [
+      "gratidão",
+      "fé",
+      "circunstâncias",
+      "paz"
+    ],
+    "destaque": false
   },
   {
     "id": 5,
@@ -31,8 +42,13 @@
     "versiculo": "O Senhor é o meu pastor; nada me faltará. Salmos 23:1",
     "resumo": "Davi não disse que nunca passaria por vales sombrios — disse que não os atravessaria sozinho.",
     "conteudo": "O Salmo 23 não é um salmo de quem nunca sofreu. É o salmo de um homem que enfrentou perseguição, traição, guerra e culpa — e ainda assim declarou: o Senhor é o meu pastor.\n\nUm pastor conhece cada ovelha pelo nome. Sabe quando ela está ferida, quando está com fome, quando se perdeu. Jesus usou exatamente essa imagem para descrever seu cuidado por nós: Eu sou o bom pastor, e conheço as minhas ovelhas (João 10:14).\n\nNada me faltará não é a promessa de uma vida sem problemas. É a garantia de que tudo que for necessário, o pastor provê. Descanso, restauração, direção, proteção — ele caminha à frente.\n\nSe hoje você se sente perdido ou vulnerável, lembre-se: você tem um pastor. Ele te conhece, te guia e nunca abandona o seu rebanho.",
-    "tags": ["cuidado de Deus", "Salmos", "provisão", "presença"],
-    "destaque": True
+    "tags": [
+      "cuidado de Deus",
+      "Salmos",
+      "provisão",
+      "presença"
+    ],
+    "destaque": true
   },
   {
     "id": 6,
@@ -43,8 +59,13 @@
     "versiculo": "Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar e nos purificar de toda injustiça. 1 João 1:9",
     "resumo": "O perdão de Deus não depende da gravidade do que fizemos, mas da perfeição do que Cristo fez por nós.",
     "conteudo": "Muitos vivem carregando o peso de erros do passado, convencidos de que certos pecados são grandes demais para ser perdoados. Esse pensamento é uma mentira que rouba a paz e mantém a alma presa.\n\nJoão escreve para crentes — pessoas que já conhecem a Deus — e os convoca a uma prática contínua: confessar os pecados. Não porque Deus se esquece de nós quando falhamos, mas porque a confissão restaura a comunhão e nos mantém caminhando na luz.\n\nA base do perdão não está em nós. Está na fidelidade e na justiça de Deus — garantidas pela obra de Cristo na cruz. Ele pagou por tudo. Nenhum pecado confessado com sinceridade fica de fora desse perdão.\n\nNão carregue hoje o que já foi pago. Confesse, receba o perdão e caminhe livre. Essa é a vida que Cristo comprou para você.",
-    "tags": ["perdão", "confissão", "graça", "cruz"],
-    "destaque": False
+    "tags": [
+      "perdão",
+      "confissão",
+      "graça",
+      "cruz"
+    ],
+    "destaque": false
   },
   {
     "id": 7,
@@ -54,11 +75,15 @@
     "autor": "Embaixadores do Reino",
     "versiculo": "Não deixemos de congregar-nos, como é costume de alguns; antes, admoestemo-nos uns aos outros. Hebreus 10:25",
     "resumo": "A fé cristã não foi feita para ser vivida no isolamento — crescemos juntos, nos corrigimos, nos encorajamos.",
-    "conteudo": "Vivemos em uma época que valoriza o individualismo. É fácil achar que a fé é algo privado, pessoal, que não precisa dos outros. Mas a Bíblia pensa diferente.\n\nO escritor de Hebreus fala para uma comunidade tentada a se isolar por causa da pressão e do sofrimento. E o remédio que ele aponta não é um programa, uma técnica ou um ritual — é a comunhão. Estejam juntos. Admoestem-se. Encorajem-se.\n\nNão somos chamados a uma fé solitária. Somos membros de um corpo, cada um com um papel, cada um precisando dos outros. O crente que se isola da igreja enfraquece, assim como a brasa retirada do fogo logo se apaga.\n\nValorize sua comunidade de fé. Apareça. Ore pelos irmãos. Deixe-se conhecer. A vida cristã florescce na comunhão — é ali que Deus nos forma e nos sustenta.",
-    "tags": ["comunhão", "igreja", "corpo de Cristo", "encorajamento"],
-    "destaque": False
+    "conteudo": "Vivemos em uma época que valoriza o individualismo. É fácil achar que a fé é algo privado, pessoal, que não precisa dos outros. Mas a Bíblia pensa diferente.\n\nO escritor de Hebreus fala para uma comunidade tentada a se isolar por causa da pressão e do sofrimento. E o remédio que ele aponta não é um programa, uma técnica ou um ritual — é a comunhão. Estejam juntos. Admoestem-se. Encorajem-se.\n\nNão somos chamados a uma fé solitária. Somos membros de um corpo, cada um com um papel, cada um precisando dos outros. O crente que se isola da igreja enfraquece, assim como a brasa retirada do fogo logo se apaga.\n\nValorize sua comunidade de fé. Apareça. Ore pelos irmãos. Deixe-se conhecer. A vida cristã floresce na comunhão — é ali que Deus nos forma e nos sustenta.",
+    "tags": [
+      "comunhão",
+      "igreja",
+      "corpo de Cristo",
+      "encorajamento"
+    ],
+    "destaque": false
   },
-  # Manter os 2 originais
   {
     "id": 1,
     "titulo": "Confiança para hoje",
@@ -68,8 +93,12 @@
     "versiculo": "Entrega o teu caminho ao Senhor; confia nele, e ele tudo fará. Salmos 37:5",
     "resumo": "Entregar o caminho ao Senhor é descansar na fidelidade de Deus enquanto caminhamos em obediência.",
     "conteudo": "Nem sempre conseguimos controlar o que acontece ao nosso redor. Ainda assim, podemos escolher entregar nossos caminhos ao Senhor.\n\nConfiar em Deus não é passividade. É caminhar com responsabilidade, mas sem carregar sozinho o peso que pertence ao Senhor.\n\nOre hoje entregando suas preocupações a Deus. Peça sabedoria para agir e fé para descansar no cuidado dele.",
-    "tags": ["confiança", "oração", "descanso"],
-    "destaque": True
+    "tags": [
+      "confiança",
+      "oração",
+      "descanso"
+    ],
+    "destaque": true
   },
   {
     "id": 2,
@@ -80,8 +109,11 @@
     "versiculo": "Lâmpada para os meus pés é tua palavra, e luz para o meu caminho. Salmos 119:105",
     "resumo": "A Palavra de Deus ilumina decisões, corrige rotas e fortalece o coração.",
     "conteudo": "A Palavra de Deus traz direção para a vida. Quando lemos as Escrituras com atenção e fé, recebemos orientação para escolhas, consolo para a alma e correção para o caminho.\n\nSepare um tempo para ouvir Deus por meio da Bíblia. Nem sempre a resposta vem como desejamos, mas a Palavra sempre nos conduz à verdade.\n\nPermita que a Escritura ilumine seus passos hoje.",
-    "tags": ["Bíblia", "direção", "renovação"],
-    "destaque": False
+    "tags": [
+      "Bíblia",
+      "direção",
+      "renovação"
+    ],
+    "destaque": false
   }
 ]
-
