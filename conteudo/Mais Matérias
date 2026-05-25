@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matérias — Embaixadores do Reino</title>
+  <meta name="description" content="Matérias cristãs atualizadas sobre fé, família, profecia, oração e avivamento. Conteúdo evangélico para edificar sua caminhada com Deus.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+  <style>
+    :root {
+      --azul-profundo: #0d2340;
+      --azul-medio: #1a3a5c;
+      --dourado: #c9922a;
+      --dourado-claro: #e8b96a;
+      --dourado-suave: #f5dfa5;
+      --creme: #faf7f0;
+      --areia: #f2ece0;
+      --texto: #1a1a1a;
+      --texto-muted: #5a5a5a;
+      --borda: rgba(0,0,0,0.08);
+      --raio: 12px;
+      --raio-grande: 20px;
+      --fonte-titulo: 'Georgia', 'Times New Roman', serif;
+      --sombra-suave: 0 2px 16px rgba(0,0,0,0.08);
+      --sombra-media: 0 6px 32px rgba(0,0,0,0.13);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Georgia', serif; color: var(--texto); background: var(--creme); line-height: 1.7; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* HERO INTERNO */
+    .page-hero {
+      background: linear-gradient(160deg, #051525 0%, var(--azul-profundo) 65%, #1a3a5c 100%);
+      color: white;
+      padding: 4rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(201,146,42,0.07) 0%, transparent 60%);
+    }
+    .page-hero .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-family: sans-serif;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.25rem;
+    }
+    .page-hero .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; }
+    .page-hero .breadcrumb a:hover { color: var(--dourado-claro); }
+    .page-hero .breadcrumb span { color: var(--dourado-claro); }
+    .page-hero h1 {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+    .page-hero h1 em { font-style: italic; color: var(--dourado-claro); }
+    .page-hero p { font-size: 0.95rem; color: rgba(255,255,255,0.7); font-family: sans-serif; max-width: 500px; }
+    .page-hero .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .page-hero .stat { text-align: center; }
+    .page-hero .stat .num { display: block; font-size: 1.6rem; font-family: var(--fonte-titulo); color: var(--dourado-claro); }
+    .page-hero .stat .label { font-size: 0.72rem; font-family: sans-serif; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* BARRA DE FILTROS */
+    .barra-filtros {
+      background: white;
+      border-bottom: 1px solid var(--borda);
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .barra-filtros .inner {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .barra-filtros .label-filtro {
+      font-size: 0.75rem;
+      font-family: sans-serif;
+      color: var(--texto-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .filtros-lista { display: flex; gap: 0.5rem; flex-wrap: wrap; flex: 1; }
+    .filtro-btn {
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-family: sans-serif;
+      border: 1.5px solid var(--borda);
+      background: white;
+      color: var(--texto-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filtro-btn:hover { border-color: var(--dourado); color: var(--dourado); }
+    .filtro-btn.ativo { border-color: var(--dourado); background: var(--dourado); color: white; }
+
+    .busca-wrap { position: relative; }
+    .busca-wrap input {
+      padding: 0.4rem 0.9rem 0.4rem 2.2rem;
+      border-radius: 50px;
+      border: 1.5px solid var(--borda);
+      font-size: 0.82rem;
+      font-family: sans-serif;
+      outline: none;
+      transition: border-color 0.2s;
+      background: var(--creme);
+      width: 180px;
+    }
+    .busca-wrap input:focus { border-color: var(--dourado); }
+    .busca-wrap::before { content: '🔍'; position: absolute; left: 0.6rem; top: 50%; transform: translateY(-50%); font-size: 0.75rem; pointer-events: none; }
+
+    /* LAYOUT PRINCIPAL */
+    .pagina-conteudo { padding: 3rem 0; }
+    .layout-dois-tercos {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .layout-dois-tercos { grid-template-columns: 1fr; } }
+
+    /* CARD DESTAQUE TOPO */
+    .card-hero-materia {
+      background: white;
+      border-radius: var(--raio-grande);
+      border: 1px solid var(--borda);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 2rem;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .card-hero-materia:hover { box-shadow: var(--sombra-media); transform: translateY(-3px); }
+    .card-hero-materia .img-area {
+      background: linear-gradient(145deg, var(--azul-profundo), #2a5080);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      color: rgba(255,255,255,0.12);
+      position: relative;
+    }
+    .card-hero-materia .img-area .badge-pos { position: absolute; top: 1rem; left: 1rem; }
+    .card-hero-materia .corpo {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .card-hero-materia .corpo h2 {
+      font-family: var(--fonte-titulo);
+      font-size: 1.4rem;
+      font-weight: normal;
+      color: var(--azul-profundo);
+      margin: 0.6rem 0;
+      line-height: 1.3;
+    }
+    .card-hero-materia .corpo p {
+      font-size: 0.88rem;
+      color: var(--texto-muted);
+      font-family: sans-serif;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 680px) { .card-hero-materia { grid-template-columns: 1fr; } .card-hero-materia .img-area { min-height: 180px; } }
+
+    /* GRADE DE CARDS */
+    .cards-grade {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 620px) { .cards-grade { grid-template-columns: 1fr; } }
+
+    .card-materia {
+      background: white;
+      border-radius: var(--raio);
+      border: 1px solid var(--borda);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .card-materia:hover { box-shadow: var(--sombra-media); transform: translateY(-3px); }
+    .card-materia .img-topo {
+      background: linear-gradient(145deg, var(--azul-medio), #0d2340);
+      aspect-ratio: 16/9;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: rgba(255,255,255,0.12);
+      position: relative;
+    }
+    .card-materia .img-topo .badge-pos { position: absolute; top: 0.75rem; left: 0.75rem; }
+    .card-materia .corpo { padding: 1.1rem; flex: 1; display: flex; flex-direction: column; }
+    .card-materia h3 {
+      font-family: var(--fonte-titulo);
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--azul-profundo);
+      line-height: 1.35;
+      margin-bottom: 0.4rem;
+    }
+    .card-materia p {
+      font-size: 0.82rem;
+      color: var(--texto-muted);
+      font-family: sans-serif;
+      line-height: 1.6;
+      flex: 1;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--borda);
+      font-size: 0.75rem;
+      color: var(--texto-muted);
+      font-family: sans-serif;
+      flex-wrap: wrap;
+    }
+    .avatar-mini {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--dourado-suave);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.65rem; color: var(--dourado);
+      font-weight: bold; font-family: sans-serif; flex-shrink: 0;
+    }
+
+    /* LISTA DE MATÉRIAS (modo lista) */
+    .lista-materias { display: flex; flex-direction: column; gap: 1rem; }
+    .item-materia {
+      background: white;
+      border-radius: var(--raio);
+      border: 1px solid var(--borda);
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      overflow: hidden;
+      transition: all 0.25s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .item-materia:hover { box-shadow: var(--sombra-suave); transform: translateX(4px); border-color: var(--dourado); }
+    .item-materia .img-mini {
+      background: linear-gradient(135deg, var(--azul-medio), #051525);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; color: rgba(255,255,255,0.15);
+    }
+    .item-materia .corpo { padding: 0.9rem 1rem; }
+    .item-materia h4 {
+      font-family: var(--fonte-titulo);
+      font-size: 0.95rem;
+      font-weight: normal;
+      color: var(--azul-profundo);
+      line-height: 1.3;
+      margin-bottom: 0.3rem;
+    }
+    .item-materia p {
+      font-size: 0.78rem;
+      color: var(--texto-muted);
+      font-family: sans-serif;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* PAGINAÇÃO */
+    .paginacao {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--borda);
+    }
+    .pag-btn {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid var(--borda);
+      background: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      font-family: sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      color: var(--texto);
+    }
+    .pag-btn:hover, .pag-btn.ativo { border-color: var(--dourado); background: var(--dourado); color: white; }
+
+    /* SIDEBAR */
+    .sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+    .sidebar-bloco {
+      background: white;
+      border-radius: var(--raio);
+      border: 1px solid var(--borda);
+      overflow: hidden;
+    }
+    .sidebar-bloco .bloco-header {
+      padding: 0.9rem 1.1rem;
+      border-bottom: 1px solid var(--borda);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sidebar-bloco .bloco-header h3 {
+      font-family: var(--fonte-titulo);
+      font-size: 0.95rem;
+      font-weight: normal;
+      color: var(--azul-profundo);
+    }
+    .sidebar-bloco .bloco-corpo { padding: 1rem; }
+
+    .item-mais-lido {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--borda);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.2s;
+    }
+    .item-mais-lido:last-child { border-bottom: none; }
+    .item-mais-lido:hover h4 { color: var(--dourado); }
+    .item-mais-lido .num {
+      font-size: 1.4rem;
+      font-family: var(--fonte-titulo);
+      color: var(--dourado-suave);
+      line-height: 1;
+      min-width: 28px;
+    }
+    .item-mais-lido h4 {
+      font-family: var(--fonte-titulo);
+      font-size: 0.85rem;
+      font-weight: normal;
+      color: var(--azul-profundo);
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+    .item-mais-lido .meta { font-size: 0.72rem; color: var(--texto-muted); font-family: sans-serif; margin-top: 0.2rem; }
+
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      padding: 0.25rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-family: sans-serif;
+      border: 1.5px solid var(--borda);
+      color: var(--texto-muted);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .tag:hover { border-color: var(--dourado); color: var(--dourado); }
+
+    /* BADGE */
+    .badge {
+      display: inline-flex; align-items: center; gap: 0.2rem;
+      padding: 0.22rem 0.65rem; border-radius: 50px;
+      font-size: 0.7rem; font-family: sans-serif; font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .badge-fe { background: #fff3e0; color: #b06000; }
+    .badge-familia { background: #e8f5e9; color: #2e7d32; }
+    .badge-profecia { background: #ede7f6; color: #4527a0; }
+    .badge-oracao { background: #fce4ec; color: #880e4f; }
+    .badge-avivamento { background: #e3f2fd; color: #0d47a1; }
+    .badge-novo { background: var(--dourado-suave); color: #7a4800; }
+    .badge-missoes { background: #e0f2f1; color: #00695c; }
+
+    /* TOGGLE VISUALIZAÇÃO */
+    .toggle-view {
+      display: flex;
+      gap: 0.3rem;
+      background: var(--areia);
+      border-radius: 50px;
+      padding: 0.2rem;
+    }
+    .view-btn {
+      width: 32px; height: 32px;
+      border-radius: 50px;
+      border: none;
+      background: transparent;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .view-btn.ativo { background: white; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 1.2rem; border-radius: 50px;
+      font-size: 0.85rem; font-family: var(--fonte-titulo);
+      text-decoration: none; cursor: pointer; border: none;
+      transition: all 0.25s; letter-spacing: 0.02em;
+    }
+    .btn-dourado { background: var(--dourado); color: white; }
+    .btn-dourado:hover { background: #b07a1a; }
+    .btn-contorno { background: transparent; color: var(--azul-profundo); border: 1.5px solid var(--azul-profundo); }
+    .btn-contorno:hover { background: var(--azul-profundo); color: white; }
+    .btn-pequeno { padding: 0.3rem 0.85rem; font-size: 0.78rem; }
+
+    /* SEÇÃO MAIS LIDAS */
+    .secao-areia { background: var(--areia); }
+    .secao { padding: 4rem 0; }
+    .linha-dourada { width: 40px; height: 3px; background: var(--dourado); border-radius: 2px; margin-bottom: 0.6rem; }
+    .secao-cabecalho { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; gap: 1rem; flex-wrap: wrap; }
+    .titulo-grupo h2 { font-family: var(--fonte-titulo); font-size: 1.8rem; color: var(--azul-profundo); font-weight: normal; }
+    .titulo-grupo h2 em { font-style: italic; color: var(--dourado); }
+    .titulo-grupo p { color: var(--texto-muted); font-size: 0.9rem; font-family: sans-serif; }
+
+    .cards-grade-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    @media (max-width: 900px) { .cards-grade-4 { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 500px) { .cards-grade-4 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Início</a>
+        <span>›</span>
+        <span>Matérias</span>
+      </div>
+      <h1>Matérias <em>Cristãs</em></h1>
+      <p>Conteúdo bíblico atualizado para edificar, informar e fortalecer sua caminhada com Deus.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="num" id="total-materias">120+</span><span class="label">Matérias</span></div>
+        <div class="stat"><span class="num">8</span><span class="label">Categorias</span></div>
+        <div class="stat"><span class="num">Semanal</span><span class="label">Atualização</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA DE FILTROS -->
+  <div class="barra-filtros">
+    <div class="container">
+      <div class="inner">
+        <span class="label-filtro">Filtrar:</span>
+        <div class="filtros-lista">
+          <button class="filtro-btn ativo" onclick="filtrar(this,'todos')">Todos</button>
+          <button class="filtro-btn" onclick="filtrar(this,'fe')">Fé</button>
+          <button class="filtro-btn" onclick="filtrar(this,'familia')">Família</button>
+          <button class="filtro-btn" onclick="filtrar(this,'profecia')">Profecia</button>
+          <button class="filtro-btn" onclick="filtrar(this,'oracao')">Oração</button>
+          <button class="filtro-btn" onclick="filtrar(this,'avivamento')">Avivamento</button>
+          <button class="filtro-btn" onclick="filtrar(this,'missoes')">Missões</button>
+          <button class="filtro-btn" onclick="filtrar(this,'jovens')">Jovens</button>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.75rem;margin-left:auto;">
+          <div class="toggle-view">
+            <button class="view-btn ativo" id="btn-grade" onclick="trocarView('grade')" title="Grade">⊞</button>
+            <button class="view-btn" id="btn-lista" onclick="trocarView('lista')" title="Lista">☰</button>
+          </div>
+          <div class="busca-wrap">
+            <input type="search" placeholder="Buscar matérias..." id="busca-input" oninput="buscar(this.value)">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="pagina-conteudo">
+    <div class="container">
+      <div class="layout-dois-tercos">
+
+        <!-- COLUNA PRINCIPAL -->
+        <div>
+
+          <!-- Card destaque -->
+          <a href="materia.html" class="card-hero-materia" data-categoria="avivamento">
+            <div class="img-area">
+              ✝
+              <div class="badge-pos"><span class="badge badge-novo">⭐ Destaque</span></div>
+            </div>
+            <div class="corpo">
+              <span class="badge badge-avivamento">Avivamento</span>
+              <h2>O Derramamento do Espírito Santo nos Últimos Tempos: Sinais e Profecias que se Cumprem</h2>
+              <p>A Bíblia anuncia um grande derramamento do Espírito antes da volta de Cristo. Estamos vivendo esse tempo? Veja os sinais bíblicos e como a Igreja deve se preparar para a maior colheita de almas da história da humanidade.</p>
+              <div class="card-meta">
+                <div style="display:flex;align-items:center;gap:0.4rem;">
+                  <div class="avatar-mini">PR</div>
+                  <span>Pr. Ricardo Alves</span>
+                </div>
+                <span>📅 25 Mai 2025</span>
+                <span>⏱ 8 min</span>
+              </div>
+              <div style="margin-top:1rem;">
+                <span class="btn btn-dourado btn-pequeno">Ler matéria →</span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Controle de visualização -->
+          <div id="area-cards">
+
+            <!-- MODO GRADE (padrão) -->
+            <div id="view-grade" class="cards-grade">
+
+              <a href="materia.html" class="card-materia" data-categoria="fe">
+                <div class="img-topo">🙏<div class="badge-pos"><span class="badge badge-fe">Fé</span></div></div>
+                <div class="corpo">
+                  <h3>Como Fortalecer Sua Fé Nos Momentos de Maior Crise e Tribulação</h3>
+                  <p>Quando tudo parece desmoronar, a fé em Deus é o único alicerce que permanece de pé. Descubra princípios bíblicos práticos para crescer na fé mesmo nas tempestades da vida.</p>
+                  <div class="card-meta">
+                    <div style="display:flex;align-items:center;gap:0.4rem;"><div class="avatar-mini">JS</div><span>Pr. João Silva</span></div>
+                    <span>📅 24 Mai · 5 min</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="materia.html" class="card-materia" data-categoria="familia">
+                <div class="img-topo">👨‍👩‍👧<div class="badge-pos"><span class="badge badge-familia">Família</span></div></div>
+                <div class="corpo">
+                  <h3>Criando Filhos no Temor de Deus: Princípios Bíblicos para os Pais de Hoje</h3>
+                  <p>Numa geração marcada pela desorientação, o lar cristão é o primeiro campo missionário. Deus tem um plano para sua família.</p>
+                  <div class="card-meta">
+                    <div style="display:flex;align-items:center;gap:0.4rem;"><div class="avatar-mini">MC</div><span>Missionária Clara</span></div>
+                    <span>📅 23 Mai · 6 min</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="materia.html" class="card-materia" data-categoria="oracao">
+                <div class="img-topo">📿<div class="badge-pos"><span class="badge badge-oracao">Oração</span></div></div>
+                <div class="corpo">
+                  <h3>7 Tipos de Oração Que Todo Cristão Deve Conhecer e Praticar</h3>
+                  <p>Intercessão, adoração, súplica, ação de graças — cada forma de orar tem seu propósito e poder especial na vida do crente.</p>
+                  <div class="card-meta">
+                    <div style="display:flex;align-items:center;gap:0.4rem;"><div class="avatar-mini">AM</div><span>Pr. Antônio Melo</span></div>
+                    <span>📅 22 Mai · 7 min</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="materia.html" class="card-materia" data-categoria="profecia">
+                <div class="img-topo">✨<div class="badge-pos"><span class="badge badge-profecia">Profecia</span></div></div>
+                <div class="corpo">
+                  <h3>Israel e a Profecia Bíblica: O Que Esperar nos Próximos Anos</h3>
+                  <p>As escrituras proféticas apontam para eventos que estão se cumprindo em nossos dias. Uma análise bíblica séria e fundamentada.</p>
+                  <div class="card-meta">
+                    <div style="display:flex;align-items:center;gap:0.4rem;"><div class="avatar-mini">ER</div><span>Pr. Elias Ribeiro</span></div>
+                    <span>📅 20 Mai · 10 min</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="materia.html" class="card-materia" data-categoria="avivamento">
+                <div class="img-topo">💒<div class="badge-pos"><span class="badge badge-avivamento">Avivamento</span></div></div>
+                <div class="corpo">
+                  <h3>Os Grandes Avivamentos da História e O Que a Igreja Pode Aprender</h3>
+                  <p>Do Primeiro Grande Avivamento ao Pentecostalismo: lições poderosas para a Igreja de Cristo nos dias de hoje.</p>
+                  <div class="card-meta">
+                    <div style="display:flex;align-items:center;gap:0.4rem;"><div class="avatar-mini">CF</div><span>Pr. Carlos Faria</span></div>
+                    <span>📅 19 Mai · 11 min</span>
+                  </div>
+                </div>
+              </a>
+
+              <a href="materia.html" class="card-materia" data-categoria="missoes">
+                <div class="img-topo">🌍<div class="badge-pos"><span class="badge badge-missoes">Missões</span></div></div>
+                <div class="corpo">
+                  <h3>Evangelismo Digital: Como Levar Cristo a Uma Geração Conectada</h3>
+                  <p>As redes sociais são o novo campo missionário. Descubra como usar a tecnologia a serviço do Evangelho com sabedoria.</p>
+                  <div class="card-meta">
+                    <div style="display:flex;align-items:center;gap:0.4rem;"><div class="avatar-mini">AC</div><span>Pr. André Costa</span></div>
+                    <span>📅 18 Mai · 8 min</span>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- MODO LISTA (oculto por padrão) -->
+            <div id="view-lista" class="lista-materias" style="display:none;">
+              <a href="materia.html" class="item-materia" data-categoria="fe">
+                <div class="img-mini">🙏</div>
+                <div class="corpo">
+                  <div style="margin-bottom:0.3rem;"><span class="badge badge-fe">Fé</span></div>
+                  <h4>Como Fortalecer Sua Fé Nos Momentos de Maior Crise e Tribulação</h4>
+                  <p>Quando tudo parece desmoronar, a fé em Deus é o único alicerce que permanece de pé.</p>
+                  <div class="card-meta" style="border:none;padding:0;margin-top:0.4rem;"><span>Pr. João Silva · 24 Mai · 5 min</span></div>
+                </div>
+              </a>
+              <a href="materia.html" class="item-materia" data-categoria="familia">
+                <div class="img-mini">👨‍👩‍👧</div>
+                <div class="corpo">
+                  <div style="margin-bottom:0.3rem;"><span class="badge badge-familia">Família</span></div>
+                  <h4>Criando Filhos no Temor de Deus: Princípios Bíblicos</h4>
+                  <p>Numa geração marcada pela desorientação, o lar cristão é o primeiro campo missionário.</p>
+                  <div class="card-meta" style="border:none;padding:0;margin-top:0.4rem;"><span>Missionária Clara · 23 Mai · 6 min</span></div>
+                </div>
+              </a>
+              <a href="materia.html" class="item-materia" data-categoria="oracao">
+                <div class="img-mini">📿</div>
+                <div class="corpo">
+                  <div style="margin-bottom:0.3rem;"><span class="badge badge-oracao">Oração</span></div>
+                  <h4>7 Tipos de Oração Que Todo Cristão Deve Conhecer e Praticar</h4>
+                  <p>Intercessão, adoração, súplica — cada forma de orar tem seu propósito especial.</p>
+                  <div class="card-meta" style="border:none;padding:0;margin-top:0.4rem;"><span>Pr. Antônio Melo · 22 Mai · 7 min</span></div>
+                </div>
+              </a>
+              <a href="materia.html" class="item-materia" data-categoria="profecia">
+                <div class="img-mini">✨</div>
+                <div class="corpo">
+                  <div style="margin-bottom:0.3rem;"><span class="badge badge-profecia">Profecia</span></div>
+                  <h4>Israel e a Profecia Bíblica: O Que Esperar nos Próximos Anos</h4>
+                  <p>As escrituras proféticas apontam para eventos que estão se cumprindo em nossos dias.</p>
+                  <div class="card-meta" style="border:none;padding:0;margin-top:0.4rem;"><span>Pr. Elias Ribeiro · 20 Mai · 10 min</span></div>
+                </div>
+              </a>
+              <a href="materia.html" class="item-materia" data-categoria="avivamento">
+                <div class="img-mini">💒</div>
+                <div class="corpo">
+                  <div style="margin-bottom:0.3rem;"><span class="badge badge-avivamento">Avivamento</span></div>
+                  <h4>Os Grandes Avivamentos da História e O Que a Igreja Pode Aprender</h4>
+                  <p>Lições poderosas dos grandes avivamentos para a Igreja de Cristo nos dias de hoje.</p>
+                  <div class="card-meta" style="border:none;padding:0;margin-top:0.4rem;"><span>Pr. Carlos Faria · 19 Mai · 11 min</span></div>
+                </div>
+              </a>
+              <a href="materia.html" class="item-materia" data-categoria="missoes">
+                <div class="img-mini">🌍</div>
+                <div class="corpo">
+                  <div style="margin-bottom:0.3rem;"><span class="badge badge-missoes">Missões</span></div>
+                  <h4>Evangelismo Digital: Como Levar Cristo a Uma Geração Conectada</h4>
+                  <p>As redes sociais são o novo campo missionário. Tecnologia a serviço do Evangelho.</p>
+                  <div class="card-meta" style="border:none;padding:0;margin-top:0.4rem;"><span>Pr. André Costa · 18 Mai · 8 min</span></div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+
+          <!-- PAGINAÇÃO -->
+          <div class="paginacao">
+            <a href="#" class="pag-btn">‹</a>
+            <a href="#" class="pag-btn ativo">1</a>
+            <a href="#" class="pag-btn">2</a>
+            <a href="#" class="pag-btn">3</a>
+            <span style="color:var(--texto-muted);font-size:0.85rem;font-family:sans-serif;">...</span>
+            <a href="#" class="pag-btn">12</a>
+            <a href="#" class="pag-btn">›</a>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+          <!-- Mais lidas -->
+          <div class="sidebar-bloco">
+            <div class="bloco-header">
+              <span>🔥</span>
+              <h3>Mais Lidas da Semana</h3>
+            </div>
+            <div class="bloco-corpo">
+              <a href="materia.html" class="item-mais-lido"><div class="num">1</div><div><h4>A Oração que Derruba Fortalezas</h4><div class="meta">4.2k leituras · Oração</div></div></a>
+              <a href="materia.html" class="item-mais-lido"><div class="num">2</div><div><h4>Sinais da Volta de Cristo em Nossos Dias</h4><div class="meta">3.8k leituras · Profecia</div></div></a>
+              <a href="materia.html" class="item-mais-lido"><div class="num">3</div><div><h4>Como Restaurar um Casamento em Crise</h4><div class="meta">3.1k leituras · Família</div></div></a>
+              <a href="materia.html" class="item-mais-lido"><div class="num">4</div><div><h4>Os 9 Frutos do Espírito na Vida Prática</h4><div class="meta">2.7k leituras · Fé</div></div></a>
+              <a href="materia.html" class="item-mais-lido"><div class="num">5</div><div><h4>Jejum Bíblico: Como e Por Quê Jejuar</h4><div class="meta">2.4k leituras · Oração</div></div></a>
+            </div>
+          </div>
+
+          <!-- Categorias -->
+          <div class="sidebar-bloco">
+            <div class="bloco-header"><span>📂</span><h3>Categorias</h3></div>
+            <div class="bloco-corpo">
+              <div style="display:flex;flex-direction:column;gap:0.4rem;">
+                <a href="#" onclick="filtrar(document.querySelector('[onclick*=fe]'),'fe');return false;" style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid var(--borda);text-decoration:none;font-family:sans-serif;font-size:0.85rem;color:var(--texto);transition:color 0.2s;" onmouseover="this.style.color='var(--dourado)'" onmouseout="this.style.color='var(--texto)'">
+                  <span>🙏 Fé</span><span style="background:var(--areia);border-radius:50px;padding:0.1rem 0.5rem;font-size:0.72rem;color:var(--texto-muted);">38</span>
+                </a>
+                <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid var(--borda);text-decoration:none;font-family:sans-serif;font-size:0.85rem;color:var(--texto);" onmouseover="this.style.color='var(--dourado)'" onmouseout="this.style.color='var(--texto)'">
+                  <span>👨‍👩‍👧 Família</span><span style="background:var(--areia);border-radius:50px;padding:0.1rem 0.5rem;font-size:0.72rem;color:var(--texto-muted);">24</span>
+                </a>
+                <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid var(--borda);text-decoration:none;font-family:sans-serif;font-size:0.85rem;color:var(--texto);" onmouseover="this.style.color='var(--dourado)'" onmouseout="this.style.color='var(--texto)'">
+                  <span>✨ Profecia</span><span style="background:var(--areia);border-radius:50px;padding:0.1rem 0.5rem;font-size:0.72rem;color:var(--texto-muted);">19</span>
+                </a>
+                <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid var(--borda);text-decoration:none;font-family:sans-serif;font-size:0.85rem;color:var(--texto);" onmouseover="this.style.color='var(--dourado)'" onmouseout="this.style.color='var(--texto)'">
+                  <span>📿 Oração</span><span style="background:var(--areia);border-radius:50px;padding:0.1rem 0.5rem;font-size:0.72rem;color:var(--texto-muted);">22</span>
+                </a>
+                <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;border-bottom:1px solid var(--borda);text-decoration:none;font-family:sans-serif;font-size:0.85rem;color:var(--texto);" onmouseover="this.style.color='var(--dourado)'" onmouseout="this.style.color='var(--texto)'">
+                  <span>💒 Avivamento</span><span style="background:var(--areia);border-radius:50px;padding:0.1rem 0.5rem;font-size:0.72rem;color:var(--texto-muted);">15</span>
+                </a>
+                <a href="#" style="display:flex;justify-content:space-between;align-items:center;padding:0.4rem 0;text-decoration:none;font-family:sans-serif;font-size:0.85rem;color:var(--texto);" onmouseover="this.style.color='var(--dourado)'" onmouseout="this.style.color='var(--texto)'">
+                  <span>🌍 Missões</span><span style="background:var(--areia);border-radius:50px;padding:0.1rem 0.5rem;font-size:0.72rem;color:var(--texto-muted);">12</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tags -->
+          <div class="sidebar-bloco">
+            <div class="bloco-header"><span>🏷️</span><h3>Tags Populares</h3></div>
+            <div class="bloco-corpo">
+              <div class="tag-cloud">
+                <a class="tag" href="#">Graça</a><a class="tag" href="#">Salvação</a><a class="tag" href="#">Cura</a>
+                <a class="tag" href="#">Libertação</a><a class="tag" href="#">Bíblia</a><a class="tag" href="#">Jesus</a>
+                <a class="tag" href="#">Espírito Santo</a><a class="tag" href="#">Matrimônio</a>
+                <a class="tag" href="#">Fidelidade</a><a class="tag" href="#">Perdão</a><a class="tag" href="#">Discipulado</a>
+                <a class="tag" href="#">Igreja</a><a class="tag" href="#">Segunda Vinda</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div style="background:var(--azul-profundo);border-radius:var(--raio);padding:1.5rem;color:white;text-align:center;position:relative;overflow:hidden;">
+            <div style="position:absolute;top:-1rem;right:-1rem;font-size:5rem;opacity:0.06;">✉</div>
+            <div style="font-size:1.5rem;margin-bottom:0.5rem;">✉️</div>
+            <h3 style="font-family:var(--fonte-titulo);font-size:1rem;font-weight:normal;margin-bottom:0.4rem;">Receba Nossas Matérias</h3>
+            <p style="font-size:0.78rem;color:rgba(255,255,255,0.65);font-family:sans-serif;margin-bottom:1rem;line-height:1.5;">Cadastre-se e receba novidades direto no seu e-mail toda semana.</p>
+            <input type="email" placeholder="Seu e-mail..." style="width:100%;padding:0.5rem 0.9rem;border-radius:50px;border:none;font-size:0.82rem;margin-bottom:0.6rem;outline:none;">
+            <button style="width:100%;padding:0.5rem;border-radius:50px;background:var(--dourado);color:white;border:none;font-family:var(--fonte-titulo);font-size:0.9rem;cursor:pointer;">Cadastrar →</button>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- MAIS LIDAS (seção completa) -->
+  <section class="secao secao-areia">
+    <div class="container">
+      <div class="secao-cabecalho">
+        <div class="titulo-grupo">
+          <div class="linha-dourada"></div>
+          <h2>Você Também Pode <em>Gostar</em></h2>
+          <p>Selecionadas especialmente para aprofundar sua fé</p>
+        </div>
+      </div>
+      <div class="cards-grade-4">
+        <a href="materia.html" class="card-materia">
+          <div class="img-topo">📖<div class="badge-pos"><span class="badge badge-fe">Fé</span></div></div>
+          <div class="corpo"><h3>Entendendo as Parábolas de Jesus: Significados Profundos</h3><p>As parábolas de Cristo carregam verdades eternas que continuam transformando vidas.</p><div class="card-meta" style="border:none;padding:0;"><span>21 Mai · 9 min</span></div></div>
+        </a>
+        <a href="materia.html" class="card-materia">
+          <div class="img-topo">⚖️<div class="badge-pos"><span class="badge badge-profecia">Profecia</span></div></div>
+          <div class="corpo"><h3>O Livro de Daniel e Os Reinos da História</h3><p>Uma análise fascinante das profecias de Daniel e seu cumprimento preciso ao longo da história.</p><div class="card-meta" style="border:none;padding:0;"><span>17 Mai · 12 min</span></div></div>
+        </a>
+        <a href="materia.html" class="card-materia">
+          <div class="img-topo">💑<div class="badge-pos"><span class="badge badge-familia">Família</span></div></div>
+          <div class="corpo"><h3>Como Restaurar um Casamento que Parece Sem Saída</h3><p>Deus é especialista em restauração. Histórias reais e princípios bíblicos para casais em crise.</p><div class="card-meta" style="border:none;padding:0;"><span>15 Mai · 8 min</span></div></div>
+        </a>
+        <a href="materia.html" class="card-materia">
+          <div class="img-topo">🕊️<div class="badge-pos"><span class="badge badge-avivamento">Avivamento</span></div></div>
+          <div class="corpo"><h3>Os Dons do Espírito Santo Para Hoje: Ainda Operam?</h3><p>Uma abordagem bíblica equilibrada sobre os dons espirituais e seu papel na Igreja atual.</p><div class="card-meta" style="border:none;padding:0;"><span>12 Mai · 10 min</span></div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="assets/js/conteudo.js"></script>
+  <script src="assets/js/componentes.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script>
+    function filtrar(el, categoria) {
+      document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('ativo'));
+      if (el && el.classList) el.classList.add('ativo');
+      const cards = document.querySelectorAll('[data-categoria]');
+      cards.forEach(c => {
+        c.style.display = (categoria === 'todos' || c.dataset.categoria === categoria) ? '' : 'none';
+      });
+    }
+
+    function trocarView(modo) {
+      const grade = document.getElementById('view-grade');
+      const lista = document.getElementById('view-lista');
+      const btnG = document.getElementById('btn-grade');
+      const btnL = document.getElementById('btn-lista');
+      if (modo === 'grade') {
+        grade.style.display = 'grid';
+        lista.style.display = 'none';
+        btnG.classList.add('ativo'); btnL.classList.remove('ativo');
+      } else {
+        grade.style.display = 'none';
+        lista.style.display = 'flex';
+        btnL.classList.add('ativo'); btnG.classList.remove('ativo');
+      }
+    }
+
+    function buscar(termo) {
+      const t = termo.toLowerCase();
+      document.querySelectorAll('[data-categoria]').forEach(c => {
+        const texto = c.textContent.toLowerCase();
+        c.style.display = texto.includes(t) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
