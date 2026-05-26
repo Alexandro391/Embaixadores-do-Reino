@@ -1,0 +1,133 @@
+:root {
+  --radio-altura: 76px;
+  --radio-bg: #10213f;
+  --radio-fg: #ffffff;
+  --radio-muted: rgba(255, 255, 255, 0.72);
+  --radio-accent: #d8ad4c;
+  --radio-border: rgba(255, 255, 255, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  background: #f5f1e8;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#portal-frame {
+  width: 100%;
+  height: calc(100vh - var(--radio-altura));
+  border: 0;
+  display: block;
+  background: #ffffff;
+}
+
+#radio-persistente {
+  position: fixed;
+  z-index: 999999;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: var(--radio-altura);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  background: var(--radio-bg);
+  color: var(--radio-fg);
+  border-top: 1px solid var(--radio-border);
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.18);
+}
+
+#radio-toggle {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+  border: 0;
+  border-radius: 999px;
+  background: var(--radio-accent);
+  color: #111827;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#radio-toggle:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.radio-info {
+  min-width: 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.radio-info strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.radio-info span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--radio-muted);
+  font-size: 13px;
+}
+
+.radio-volume {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.radio-volume input {
+  width: 150px;
+  accent-color: var(--radio-accent);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --radio-altura: 94px;
+  }
+
+  #radio-persistente {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  #radio-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .radio-info {
+    flex-basis: calc(100% - 56px);
+  }
+
+  .radio-volume {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .radio-volume input {
+    width: min(220px, 60vw);
+  }
+}
