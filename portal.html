@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal — Embaixadores do Reino</title>
+  <meta name="description" content="Portal com rádio persistente. A navegação do conteúdo acontece sem interromper a transmissão.">
+  <link rel="stylesheet" href="assets/css/radio-persistente.css">
+</head>
+<body>
+  <!--
+    Este arquivo mantém a rádio fora da área de navegação.
+    As páginas do portal são abertas dentro do iframe abaixo.
+    Resultado: ao trocar de página no portal, o player não é destruído.
+  -->
+
+  <iframe
+    id="portal-frame"
+    name="portal-frame"
+    src="index.html"
+    title="Conteúdo do portal"
+    data-home-page="index.html"
+  ></iframe>
+
+  <section id="radio-persistente" aria-label="Rádio ao vivo">
+    <audio id="radio-audio" preload="none" crossorigin="anonymous"></audio>
+
+    <button id="radio-toggle" type="button" aria-label="Tocar rádio" title="Tocar rádio">
+      ▶
+    </button>
+
+    <div class="radio-info">
+      <strong id="radio-titulo">Rádio Embaixadores do Reino</strong>
+      <span id="radio-status">Clique para ouvir ao vivo</span>
+    </div>
+
+    <label class="radio-volume" aria-label="Volume da rádio">
+      <span>🔈</span>
+      <input id="radio-volume" type="range" min="0" max="100" value="80">
+      <span>🔊</span>
+    </label>
+  </section>
+
+  <script src="assets/js/radio-persistente.js"></script>
+</body>
+</html>
