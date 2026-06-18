@@ -1,0 +1,437 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O vento sopra onde quer — Crônica teológica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --color-bg: #faf9f7;
+    --color-surface: #ffffff;
+    --color-surface-2: #f4f2ef;
+    --color-text-primary: #1a1916;
+    --color-text-secondary: #6b6860;
+    --color-border: rgba(26,25,22,0.12);
+    --color-border-hover: rgba(26,25,22,0.22);
+    --font-serif: 'Lora', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --radius-md: 8px;
+    --radius-lg: 14px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #18171a;
+      --color-surface: #222128;
+      --color-surface-2: #2a2930;
+      --color-text-primary: #eeecea;
+      --color-text-secondary: #9a9894;
+      --color-border: rgba(238,236,234,0.1);
+      --color-border-hover: rgba(238,236,234,0.22);
+    }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text-primary);
+    font-family: var(--font-serif);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1.25rem 5rem;
+  }
+
+  .page {
+    width: 100%;
+    max-width: 660px;
+  }
+
+  /* Header */
+  .header-tag {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .header-tag::before {
+    content: '';
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  h1.titulo {
+    font-family: var(--font-serif);
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 1.25;
+    font-style: italic;
+    margin-bottom: 0.6rem;
+    color: var(--color-text-primary);
+  }
+
+  .subtitulo {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color-text-secondary);
+    margin-bottom: 2.8rem;
+    line-height: 1.6;
+  }
+
+  .divisor {
+    width: 44px;
+    height: 2px;
+    background: var(--color-text-secondary);
+    margin-bottom: 2.8rem;
+    opacity: 0.35;
+  }
+
+  /* Corpo */
+  .corpo {
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--color-text-primary);
+  }
+  .corpo p { margin-bottom: 1.7rem; }
+  .corpo p:last-of-type { margin-bottom: 0; }
+
+  /* Tooltip */
+  .tooltip-container {
+    position: relative;
+    display: inline;
+  }
+  .palavra-chave {
+    position: relative;
+    cursor: default;
+  }
+  .palavra-chave::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 1px;
+    width: 100%; height: 1px;
+    background: currentColor;
+    opacity: 0.28;
+  }
+  .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-surface);
+    border: 0.5px solid var(--color-border-hover);
+    border-radius: var(--radius-md);
+    padding: 7px 13px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-style: normal;
+    color: var(--color-text-secondary);
+    white-space: nowrap;
+    z-index: 20;
+    transition: opacity 0.18s;
+    pointer-events: none;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Cards grid */
+  .parabola-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin: 2.8rem 0;
+    border: 0.5px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-border);
+  }
+  .parabola-item {
+    padding: 1.1rem 1.4rem;
+    background: var(--color-surface-2);
+    transition: background 0.18s;
+    cursor: default;
+  }
+  .parabola-item:hover { background: var(--color-surface); }
+  .parabola-item .label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 5px;
+  }
+  .parabola-item .valor {
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--color-text-primary);
+  }
+
+  /* Citação */
+  .destaque-bloco {
+    border-left: 3px solid var(--color-border-hover);
+    padding: 1.1rem 1.6rem;
+    margin: 3rem 0;
+  }
+  .destaque-bloco p {
+    font-style: italic;
+    font-size: 19px;
+    line-height: 1.75;
+    margin-bottom: 0.7rem;
+    color: var(--color-text-primary);
+  }
+  .destaque-bloco .referencia {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.04em;
+  }
+
+  /* Separador de seção */
+  .separador-secao {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 2.8rem 0;
+  }
+  .separador-secao::before,
+  .separador-secao::after {
+    content: '';
+    flex: 1;
+    height: 0.5px;
+    background: var(--color-border);
+  }
+  .separador-secao span {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+  }
+
+  /* Assinatura e botão */
+  .assinatura {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    margin-top: 3.2rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .audio-btn {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--color-text-secondary);
+    background: none;
+    border: 0.5px solid var(--color-border-hover);
+    border-radius: var(--radius-md);
+    padding: 7px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .audio-btn:hover { background: var(--color-surface-2); color: var(--color-text-primary); }
+  .audio-btn.playing { color: var(--color-text-primary); }
+
+  .progress-bar {
+    width: 100%;
+    height: 2px;
+    background: var(--color-border);
+    margin-top: 1.3rem;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--color-text-secondary);
+    transition: width 0.12s linear;
+  }
+
+  @media (max-width: 520px) {
+    h1.titulo { font-size: 26px; }
+    .corpo { font-size: 16px; }
+    .parabola-section { grid-template-columns: 1fr; }
+    .destaque-bloco p { font-size: 17px; }
+  }
+</style>
+</head>
+<body>
+<article class="page">
+
+  <div class="header-tag">Crônica teológica</div>
+  <h1 class="titulo">O vento sopra onde quer</h1>
+  <p class="subtitulo">Reflexão sobre a soberania de Deus e a liberdade do Espírito</p>
+  <div class="divisor"></div>
+
+  <div class="corpo">
+    <p>
+      Há uma tendência muito humana — e muito perigosa — de domesticar o sagrado. Queremos que Deus fale pelos canais certos, pelas bocas autorizadas, nos lugares consagrados. Construímos templos, ordenamos líderes, estabelecemos liturgias. E está tudo bem. Mas, às vezes, esquecemos que o Espírito não pediu permissão para soprar.
+    </p>
+
+    <p>
+      Deus fala nos <span class="tooltip-container"><span class="palavra-chave">palácios</span><span class="tooltip">Onde o poder humano se concentra</span></span>, mas também nas <span class="tooltip-container"><span class="palavra-chave">palafitas</span><span class="tooltip">Onde a humanidade mais precisa ouvir</span></span>. Fala por meio de profetas ungidos, mas também por meio de uma mulher cananeia — uma estrangeira que nenhum escriba teria colocado na lista dos mensageiros esperados. Fala pela Palavra, sua revelação especial; mas fala também pela criação, sua revelação geral, silenciosa e escandalosamente disponível a todos.
+    </p>
+  </div>
+
+  <div class="parabola-section">
+    <div class="parabola-item">
+      <div class="label">Onde fala</div>
+      <div class="valor">Palácios e palafitas</div>
+    </div>
+    <div class="parabola-item">
+      <div class="label">Por quem fala</div>
+      <div class="valor">Profetas e estrangeiros</div>
+    </div>
+    <div class="parabola-item">
+      <div class="label">Como fala</div>
+      <div class="valor">Pela Palavra e pela criação</div>
+    </div>
+    <div class="parabola-item">
+      <div class="label">Condição</div>
+      <div class="valor">Ouvidos e corações abertos</div>
+    </div>
+  </div>
+
+  <div class="corpo">
+    <p>
+      Deus fala onde quer, quando quer e por quem quiser falar. Não se trata de uma ruptura com a ordem — é uma afirmação da soberania. O Espírito não se deixa engessar por estruturas humanas, por instituições, por hierarquias ou por lugares que nós mesmos declaramos sagrados. Sua voz ecoa onde há ouvidos dispostos a ouvir e corações prontos a acolher.
+    </p>
+  </div>
+
+  <div class="destaque-bloco">
+    <p>"O vento sopra onde quer; ouves a sua voz, mas não sabes de onde vem nem para onde vai. Assim é todo aquele que é nascido do Espírito."</p>
+    <span class="referencia">— João 3.8, Evangelho de João</span>
+  </div>
+
+  <div class="separador-secao"><span>conclusão</span></div>
+
+  <div class="corpo">
+    <p>
+      Jesus não disse isso como metáfora conveniente. Disse como advertência. O vento não consulta nossas agendas teológicas antes de soprar. Ele vem. E vai. E sopra outra vez — sobre o profeta e sobre o pescador, sobre o rei e sobre o estrangeiro, sobre o templo e sobre a estrada.
+    </p>
+    <p>
+      A grande questão, então, não é se Deus está falando. A questão é: estamos com os ouvidos abertos?
+    </p>
+  </div>
+
+  <div class="assinatura">
+    <span>Reflexão — soberania e comunicação divina</span>
+    <button class="audio-btn" id="audioBtn" onclick="toggleLeitura()">
+      <i class="ti ti-player-play" id="playIcon"></i>
+      <span id="btnLabel">Ouvir crônica</span>
+    </button>
+  </div>
+
+  <div class="progress-bar" id="progressBar" style="display:none">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+</article>
+
+<script>
+  let reading = false;
+  let utterance = null;
+
+  const texto = `O vento sopra onde quer. Há uma tendência muito humana — e muito perigosa — de domesticar o sagrado. Queremos que Deus fale pelos canais certos, pelas bocas autorizadas, nos lugares consagrados. Construímos templos, ordenamos líderes, estabelecemos liturgias. E está tudo bem. Mas, às vezes, esquecemos que o Espírito não pediu permissão para soprar. Deus fala nos palácios, mas também nas palafitas. Fala por meio de profetas ungidos, mas também por meio de uma mulher cananeia — uma estrangeira que nenhum escriba teria colocado na lista dos mensageiros esperados. Fala pela Palavra, sua revelação especial; mas fala também pela criação, sua revelação geral, silenciosa e escandalosamente disponível a todos. Deus fala onde quer, quando quer e por quem quiser falar. Não se trata de uma ruptura com a ordem — é uma afirmação da soberania. O Espírito não se deixa engessar por estruturas humanas, por instituições, por hierarquias ou por lugares que nós mesmos declaramos sagrados. Sua voz ecoa onde há ouvidos dispostos a ouvir e corações prontos a acolher. O vento não consulta nossas agendas teológicas antes de soprar. Ele vem. E vai. E sopra outra vez — sobre o profeta e sobre o pescador, sobre o rei e sobre o estrangeiro, sobre o templo e sobre a estrada. A grande questão, então, não é se Deus está falando. A questão é: estamos com os ouvidos abertos?`;
+
+  function toggleLeitura() {
+    const btn = document.getElementById('audioBtn');
+    const icon = document.getElementById('playIcon');
+    const label = document.getElementById('btnLabel');
+    const bar = document.getElementById('progressBar');
+    const fill = document.getElementById('progressFill');
+
+    if (!('speechSynthesis' in window)) {
+      label.textContent = 'Não disponível';
+      return;
+    }
+
+    if (reading) {
+      window.speechSynthesis.cancel();
+      reading = false;
+      icon.className = 'ti ti-player-play';
+      label.textContent = 'Ouvir crônica';
+      btn.classList.remove('playing');
+      bar.style.display = 'none';
+      fill.style.width = '0%';
+      return;
+    }
+
+    utterance = new SpeechSynthesisUtterance(texto);
+    utterance.lang = 'pt-BR';
+    utterance.rate = 0.92;
+    utterance.pitch = 1.0;
+
+    let startTime = null;
+    const duration = texto.length * 60;
+
+    utterance.onstart = () => {
+      reading = true;
+      startTime = Date.now();
+      icon.className = 'ti ti-player-pause';
+      label.textContent = 'Pausar leitura';
+      btn.classList.add('playing');
+      bar.style.display = 'block';
+
+      const interval = setInterval(() => {
+        if (!reading) { clearInterval(interval); return; }
+        const elapsed = Date.now() - startTime;
+        const pct = Math.min((elapsed / duration) * 100, 99);
+        fill.style.width = pct + '%';
+      }, 200);
+    };
+
+    utterance.onend = () => {
+      reading = false;
+      icon.className = 'ti ti-player-play';
+      label.textContent = 'Ouvir crônica';
+      btn.classList.remove('playing');
+      fill.style.width = '100%';
+      setTimeout(() => {
+        bar.style.display = 'none';
+        fill.style.width = '0%';
+      }, 800);
+    };
+
+    utterance.onerror = () => {
+      reading = false;
+      icon.className = 'ti ti-player-play';
+      label.textContent = 'Ouvir crônica';
+      btn.classList.remove('playing');
+      bar.style.display = 'none';
+    };
+
+    window.speechSynthesis.speak(utterance);
+  }
+</script>
+</body>
+</html>
+
