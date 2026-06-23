@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Abraço que a Alma Precisa — Embaixadores do Reino</title>
+  <meta name="description" content="Talvez o futuro da igreja seja voltar para o modelo primitivo. Uma reflexão sobre acolhimento, cura e a singeleza do amor que transforma.">
+  <meta name="author" content="Embaixadores do Reino">
+  <meta property="og:title" content="O Abraço que a Alma Precisa — Crônica Teológica">
+  <meta property="og:description" content="Talvez o futuro da igreja seja voltar para o modelo primitivo. Uma reflexão sobre acolhimento, cura e a singeleza do amor que transforma.">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsivo.css">
+
+  <style>
+    /* ── Variáveis de fallback caso o style.css não esteja disponível ── */
+    :root {
+      --fonte-titulo: Georgia, 'Times New Roman', serif;
+      --fonte-corpo: 'Segoe UI', system-ui, sans-serif;
+      --azul-profundo: #1a3a6e;
+      --dourado: #c9a84c;
+      --dourado-claro: #e8c97a;
+      --areia: #f5f0e8;
+      --texto-escuro: #1a1a2e;
+      --texto-medio: #444;
+      --borda-raio: 14px;
+    }
+
+    /* ── Reset mínimo ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--fonte-corpo); color: var(--texto-escuro); background: #fff; line-height: 1.7; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Container ── */
+    .container { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ── HERO DA CRÔNICA ── */
+    .cronica-hero {
+      background: linear-gradient(145deg, #1a1740 0%, #2e2a5e 50%, #3d3470 100%);
+      padding: 4rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cronica-hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .cronica-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; left: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+    }
+    .cronica-hero .container { position: relative; z-index: 1; }
+
+    .cronica-eyebrow {
+      font-family: var(--fonte-titulo);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1.25rem;
+    }
+
+    .cronica-icone {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    .cronica-titulo {
+      font-family: var(--fonte-titulo);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-style: italic;
+      font-weight: normal;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+
+    .cronica-subtitulo {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      line-height: 1.65;
+    }
+
+    .cronica-meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      flex-wrap: wrap;
+    }
+    .cronica-meta-item {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+    }
+    .cronica-meta-item strong {
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+    }
+    .cronica-tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── CORPO DO ARTIGO ── */
+    .cronica-corpo {
+      background: #fff;
+      padding: 3.5rem 0 4rem;
+    }
+
+    /* Epígrafe bíblica */
+    .epigrafe {
+      background: var(--areia, #f5f0e8);
+      border-left: 4px solid var(--dourado, #c9a84c);
+      border-radius: 0 10px 10px 0;
+      padding: 1.5rem 1.75rem;
+      margin: 0 0 2.5rem;
+    }
+    .epigrafe blockquote {
+      font-family: var(--fonte-titulo);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--texto-medio, #444);
+      line-height: 1.7;
+    }
+    .epigrafe cite {
+      display: block;
+      margin-top: 0.6rem;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--dourado, #c9a84c);
+    }
+
+    /* Parágrafos */
+    .cronica-corpo p {
+      font-size: 1.075rem;
+      line-height: 1.9;
+      color: #2a2a2a;
+      margin-bottom: 1.6rem;
+    }
+    .cronica-corpo p:last-child { margin-bottom: 0; }
+
+    /* Destaque tipográfico na abertura */
+    .cronica-corpo p.abertura {
+      font-family: var(--fonte-titulo);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--azul-profundo, #1a3a6e);
+      line-height: 1.75;
+    }
+
+    /* Divisor decorativo entre blocos */
+    .divisor {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .divisor::before,
+    .divisor::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(0,0,0,0.1);
+    }
+    .divisor span {
+      font-size: 1.2rem;
+      opacity: 0.4;
+    }
+
+    /* Citação em destaque no meio do texto */
+    .pullquote {
+      margin: 2.5rem 0;
+      padding: 1.75rem 2rem;
+      border-radius: var(--borda-raio, 14px);
+      background: linear-gradient(135deg, #1a1740 0%, #2e2a5e 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .pullquote::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px; left: 16px;
+      font-size: 7rem;
+      font-family: var(--fonte-titulo);
+      color: rgba(255,255,255,0.08);
+      line-height: 1;
+    }
+    .pullquote p {
+      font-family: var(--fonte-titulo) !important;
+      font-size: 1.15rem !important;
+      font-style: italic;
+      color: #fff !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── RODAPÉ DO ARTIGO ── */
+    .cronica-rodape {
+      background: var(--areia, #f5f0e8);
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding: 2.5rem 0;
+    }
+    .cronica-rodape-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .cronica-rodape-texto {
+      font-size: 13px;
+      color: #777;
+    }
+    .cronica-rodape-texto strong {
+      display: block;
+      font-size: 14px;
+      color: var(--texto-escuro, #1a1a2e);
+      margin-bottom: 2px;
+    }
+    .btn-voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--azul-profundo, #1a3a6e);
+      color: #fff;
+      padding: 0.6rem 1.25rem;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+    .btn-voltar:hover { opacity: 0.85; }
+
+    /* ── MAIS CRÔNICAS ── */
+    .mais-cronicas {
+      padding: 3rem 0;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.07);
+    }
+    .mais-cronicas h3 {
+      font-family: var(--fonte-titulo);
+      font-size: 1.3rem;
+      color: var(--azul-profundo, #1a3a6e);
+      margin-bottom: 1.5rem;
+      font-weight: normal;
+      font-style: italic;
+    }
+
+    .card-cronica-mini {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      background: #fff;
+    }
+    .card-cronica-mini:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .card-cronica-mini-visual {
+      background: linear-gradient(145deg, #1a1740, #3d3470);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+    .card-cronica-mini-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 4px;
+    }
+    .card-cronica-mini-titulo {
+      font-family: var(--fonte-titulo);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--azul-profundo, #1a3a6e);
+      line-height: 1.4;
+    }
+
+    /* ── RESPONSIVO ── */
+    @media (max-width: 600px) {
+      .cronica-hero { padding: 3rem 0 2rem; }
+      .cronica-corpo { padding: 2.5rem 0 3rem; }
+      .cronica-rodape-inner { flex-direction: column; align-items: flex-start; }
+      .pullquote { padding: 1.25rem 1.25rem; }
+      .pullquote p { font-size: 1rem !important; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-cronica-mini { transition: none; }
+      .btn-voltar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header-container"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="cronica-hero" aria-label="Cabeçalho da crônica">
+      <div class="container">
+        <p class="cronica-eyebrow">✝ Crônica Teológica — Embaixadores do Reino</p>
+        <div class="cronica-icone" aria-hidden="true">🤝</div>
+        <h1 class="cronica-titulo">O Abraço que a Alma Precisa</h1>
+        <p class="cronica-subtitulo">Uma reflexão sobre acolhimento, cura e a singeleza do amor que nos conduz de volta a Deus</p>
+        <div class="cronica-meta">
+          <span class="cronica-tag">Reflexão</span>
+          <span class="cronica-tag">Igreja Primitiva</span>
+          <span class="cronica-meta-item"><strong>Atos 2.42</strong></span>
+          <span class="cronica-meta-item">Embaixadores do Reino</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORPO -->
+    <article class="cronica-corpo" aria-label="Texto da crônica">
+      <div class="container">
+
+        <div class="epigrafe">
+          <blockquote>
+            "Eles perseveravam na doutrina dos apóstolos, na comunhão, no partir do pão e nas orações."
+          </blockquote>
+          <cite>Atos 2.42</cite>
+        </div>
+
+        <p class="abertura">
+          Talvez o futuro da igreja seja voltar para o modelo primitivo. Talvez as megaigrejas tenham os seus dias contados.
+        </p>
+
+        <p>
+          Atos capítulo 2 nos fala do partir do pão, da comunhão e da singeleza de coração que havia na igreja primitiva. Chegará um tempo em que as pessoas se cansarão de tudo isso — do esplendor do templo, do conforto, das tecnologias sofisticadas, dos louvores executados com maestria e perfeição, e da oratória do pregador que não te deixa piscar de tão impressionante.
+        </p>
+
+        <p>
+          Muitas vezes, Deus fala mais por um abraço, um sorriso e um simples gesto de carinho do que durante a ministração do louvor ou da palavra. É fácil explicar: quando a alma está abatida e o coração machucado, a forma mais fácil de se conectar com o ambiente de adoração é através do acolhimento. O amor funciona como uma porta de entrada que nos conduz para um novo estágio.
+        </p>
+
+        <div class="divisor" aria-hidden="true"><span>✦</span></div>
+
+        <p>
+          Pois quando a vida se torna dura e nos fere, voltar não é fácil e nem acontece de imediato. O bálsamo que cura a alma ferida precisa ser derramado aos poucos. E o Espírito Santo sabe disso.
+        </p>
+
+        <div class="pullquote">
+          <p>Ele sabe exatamente como agir em noites escuras e dias turbulentos. Ele entende e respeita o nosso tempo, sabe ficar ao nosso lado em silêncio, se preciso for.</p>
+        </div>
+
+        <p>
+          Ele também usa seus instrumentos — que são como anjos que nos cercam e nos protegem —, pessoas que nos olham nos olhos e simplesmente nos abraçam, sem julgamentos.
+        </p>
+
+        <p>
+          E às vezes é só o que precisamos, é só o que queremos: um gesto de carinho e amor.
+        </p>
+
+        <div class="divisor" aria-hidden="true"><span>✦</span></div>
+
+        <p>
+          Não precisamos ser lembrados do que já estamos cansados de saber. Não precisamos ser incentivados a sermos corajosos e a nos levantar. Isso já sabemos. O que queremos é ser abraçados e sentir que alguém se importa conosco de verdade.
+        </p>
+
+      </div>
+    </article>
+
+    <!-- RODAPÉ DO ARTIGO -->
+    <section class="cronica-rodape">
+      <div class="container">
+        <div class="cronica-rodape-inner">
+          <div class="cronica-rodape-texto">
+            <strong>Embaixadores do Reino</strong>
+            Portal Evangélico Cristão · Crônica Teológica
+          </div>
+          <a href="index.html" class="btn-voltar">← Voltar ao Portal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIS CRÔNICAS -->
+    <section class="mais-cronicas">
+      <div class="container">
+        <h3>Outras Crônicas Teológicas</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
+
+          <a href="ventodoespírito.HTML" class="card-cronica-mini">
+            <div class="card-cronica-mini-visual">🕊️</div>
+            <div>
+              <div class="card-cronica-mini-label">Crônica Teológica</div>
+              <div class="card-cronica-mini-titulo">O vento sopra onde quer</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-container"></div>
+
+  <script src="assets/js/componentes.js"></script>
+
+</body>
+</html>
