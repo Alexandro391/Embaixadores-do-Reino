@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O Abraço que a Alma Precisa — Embaixadores do Reino</title>
+  <meta name="description" content="Talvez o futuro da igreja seja voltar para o modelo primitivo. Uma reflexão sobre acolhimento, cura e a singeleza do amor que transforma.">
+  <meta name="author" content="Embaixadores do Reino">
+  <meta property="og:title" content="O Abraço que a Alma Precisa — Crônica Teológica">
+  <meta property="og:description" content="Uma reflexão sobre acolhimento, cura e a singeleza do amor que nos conduz de volta a Deus.">
+  <meta property="og:type" content="article">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul:        #1a2e5e;
+      --azul-escuro: #111a3a;
+      --roxo-escuro: #1a1740;
+      --roxo-mid:    #2e2a5e;
+      --roxo-claro:  #3d3470;
+      --dourado:     #c9a84c;
+      --dourado-cl:  #e8c97a;
+      --areia:       #f5f0e8;
+      --areia-escura:#ede7d9;
+      --texto:       #1a1a2e;
+      --texto-med:   #3a3a4a;
+      --texto-leve:  #666;
+      --branco:      #ffffff;
+      --raio:        14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', 'Segoe UI', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--texto);
+      background: #fff;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ════════════════════════════════
+       TOPO MINIMALISTA (navbar simples)
+    ════════════════════════════════ */
+    .navbar {
+      background: var(--azul-escuro);
+      padding: 0.9rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .navbar .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1100px;
+    }
+    .navbar-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      color: var(--dourado-cl);
+      letter-spacing: 0.03em;
+    }
+    .navbar-logo span {
+      font-size: 0.7rem;
+      font-family: 'Lato', sans-serif;
+      color: rgba(255,255,255,0.4);
+      display: block;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: -2px;
+    }
+    .navbar-link {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 5px 14px;
+      transition: all 0.2s;
+    }
+    .navbar-link:hover {
+      color: #fff;
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    /* ════════════════════════════════
+       HERO DA CRÔNICA
+    ════════════════════════════════ */
+    .hero {
+      background: linear-gradient(145deg, var(--roxo-escuro) 0%, var(--roxo-mid) 55%, var(--roxo-claro) 100%);
+      padding: 4rem 0 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -50px; left: -50px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.03);
+      pointer-events: none;
+    }
+    .hero .container { position: relative; z-index: 1; }
+
+    .hero-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 1.5rem;
+    }
+    .hero-icone {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      opacity: 0.88;
+      line-height: 1;
+    }
+    .hero-titulo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: #fff;
+      line-height: 1.22;
+      margin-bottom: 1rem;
+    }
+    .hero-subtitulo {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.62);
+      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.13);
+    }
+    .tag {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 20px;
+      padding: 3px 13px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.68);
+      letter-spacing: 0.05em;
+    }
+    .tag-referencia {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--dourado-cl);
+      margin-left: 4px;
+    }
+
+    /* ════════════════════════════════
+       CORPO DO ARTIGO
+    ════════════════════════════════ */
+    .artigo {
+      padding: 3.5rem 0 4rem;
+      background: #fff;
+    }
+
+    /* Epígrafe */
+    .epigrafe {
+      background: var(--areia);
+      border-left: 4px solid var(--dourado);
+      border-radius: 0 10px 10px 0;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 2.5rem;
+    }
+    .epigrafe blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--texto-med);
+      line-height: 1.75;
+    }
+    .epigrafe cite {
+      display: block;
+      margin-top: 0.65rem;
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dourado);
+    }
+
+    /* Parágrafos */
+    .artigo p {
+      font-size: 1.05rem;
+      line-height: 1.92;
+      color: #282830;
+      margin-bottom: 1.6rem;
+    }
+    .artigo p:last-child { margin-bottom: 0; }
+
+    /* Parágrafo de abertura */
+    .artigo p.abertura {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.22rem;
+      font-style: italic;
+      color: var(--azul);
+      line-height: 1.75;
+    }
+
+    /* Divisor */
+    .divisor {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .divisor::before,
+    .divisor::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(0,0,0,0.09);
+    }
+    .divisor-simbolo {
+      font-size: 1rem;
+      color: var(--dourado);
+      opacity: 0.7;
+    }
+
+    /* Pull quote */
+    .pullquote {
+      margin: 2.5rem 0;
+      padding: 2rem 2.25rem;
+      border-radius: var(--raio);
+      background: linear-gradient(140deg, var(--roxo-escuro) 0%, var(--roxo-mid) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .pullquote::before {
+      content: '\201C';
+      position: absolute;
+      top: -20px; left: 14px;
+      font-size: 8rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      color: rgba(255,255,255,0.07);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .pullquote p {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-size: 1.15rem !important;
+      font-style: italic;
+      color: #fff !important;
+      line-height: 1.75 !important;
+      margin: 0 !important;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ════════════════════════════════
+       RODAPÉ DO ARTIGO
+    ════════════════════════════════ */
+    .artigo-rodape {
+      background: var(--areia);
+      border-top: 1px solid var(--areia-escura);
+      padding: 2.25rem 0;
+    }
+    .artigo-rodape .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      max-width: 1100px;
+    }
+    .rodape-info strong {
+      display: block;
+      font-size: 14px;
+      color: var(--texto);
+      margin-bottom: 2px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+    }
+    .rodape-info span {
+      font-size: 12px;
+      color: var(--texto-leve);
+      letter-spacing: 0.03em;
+    }
+    .btn-voltar {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--azul-escuro);
+      color: #fff;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: opacity 0.2s;
+    }
+    .btn-voltar:hover { opacity: 0.8; }
+
+    /* ════════════════════════════════
+       MAIS CRÔNICAS
+    ════════════════════════════════ */
+    .mais-cronicas {
+      padding: 3rem 0 3.5rem;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .mais-cronicas h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--azul);
+      margin-bottom: 1.5rem;
+    }
+    .cards-mini {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .card-mini {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 10px;
+      transition: box-shadow 0.2s, transform 0.2s;
+      background: #fff;
+    }
+    .card-mini:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .card-mini-visual {
+      background: linear-gradient(145deg, var(--roxo-escuro), var(--roxo-claro));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      min-height: 72px;
+    }
+    .card-mini-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 5px;
+    }
+    .card-mini-titulo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 0.92rem;
+      font-style: italic;
+      color: var(--azul);
+      line-height: 1.45;
+    }
+
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    .footer {
+      background: var(--azul-escuro);
+      padding: 2rem 0;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+    }
+    .footer strong {
+      color: var(--dourado-cl);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    /* ════════════════════════════════
+       RESPONSIVO
+    ════════════════════════════════ */
+    @media (max-width: 600px) {
+      .hero { padding: 3rem 0 2.5rem; }
+      .hero-titulo { font-size: 2rem; }
+      .artigo { padding: 2.5rem 0 3rem; }
+      .pullquote { padding: 1.5rem 1.25rem; }
+      .pullquote p { font-size: 1rem !important; }
+      .artigo-rodape .container { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .card-mini, .btn-voltar, .navbar-link { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" aria-label="Navegação principal">
+    <div class="container">
+      <div class="navbar-logo">
+        Embaixadores do Reino
+        <span>✝ Portal Evangélico</span>
+      </div>
+      <a href="index.html" class="navbar-link" target="_parent">← Voltar ao Portal</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Cabeçalho da crônica">
+      <div class="container">
+        <p class="hero-eyebrow">✝ Crônica Teológica</p>
+        <div class="hero-icone" aria-hidden="true">🤝</div>
+        <h1 class="hero-titulo">O Abraço que a Alma Precisa</h1>
+        <p class="hero-subtitulo">Uma reflexão sobre acolhimento, cura e a singeleza do amor que nos conduz de volta a Deus</p>
+        <div class="hero-tags">
+          <span class="tag">Reflexão</span>
+          <span class="tag">Igreja Primitiva</span>
+          <span class="tag">Espírito Santo</span>
+          <span class="tag-referencia">Atos 2.42</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORPO -->
+    <article class="artigo" aria-label="Texto da crônica">
+      <div class="container">
+
+        <div class="epigrafe">
+          <blockquote>
+            "Eles perseveravam na doutrina dos apóstolos, na comunhão, no partir do pão e nas orações."
+          </blockquote>
+          <cite>Atos 2.42</cite>
+        </div>
+
+        <p class="abertura">
+          Talvez o futuro da igreja seja voltar para o modelo primitivo. Talvez as megaigrejas tenham os seus dias contados.
+        </p>
+
+        <p>
+          Atos capítulo 2 nos fala do partir do pão, da comunhão e da singeleza de coração que havia na igreja primitiva. Chegará um tempo em que as pessoas se cansarão de tudo isso — do esplendor do templo, do conforto, das tecnologias sofisticadas, dos louvores executados com maestria e perfeição, e da oratória do pregador que não te deixa piscar de tão impressionante.
+        </p>
+
+        <p>
+          Muitas vezes, Deus fala mais por um abraço, um sorriso e um simples gesto de carinho do que durante a ministração do louvor ou da palavra. É fácil explicar: quando a alma está abatida e o coração machucado, a forma mais fácil de se conectar com o ambiente de adoração é através do acolhimento. O amor funciona como uma porta de entrada que nos conduz para um novo estágio.
+        </p>
+
+        <div class="divisor" aria-hidden="true">
+          <span class="divisor-simbolo">✦</span>
+        </div>
+
+        <p>
+          Pois quando a vida se torna dura e nos fere, voltar não é fácil e nem acontece de imediato. O bálsamo que cura a alma ferida precisa ser derramado aos poucos. E o Espírito Santo sabe disso.
+        </p>
+
+        <div class="pullquote">
+          <p>Ele sabe exatamente como agir em noites escuras e dias turbulentos. Ele entende e respeita o nosso tempo, sabe ficar ao nosso lado em silêncio, se preciso for.</p>
+        </div>
+
+        <p>
+          Ele também usa seus instrumentos — que são como anjos que nos cercam e nos protegem —, pessoas que nos olham nos olhos e simplesmente nos abraçam, sem julgamentos.
+        </p>
+
+        <p>
+          E às vezes é só o que precisamos, é só o que queremos: um gesto de carinho e amor.
+        </p>
+
+        <div class="divisor" aria-hidden="true">
+          <span class="divisor-simbolo">✦</span>
+        </div>
+
+        <p>
+          Não precisamos ser lembrados do que já estamos cansados de saber. Não precisamos ser incentivados a sermos corajosos e a nos levantar. Isso já sabemos. O que queremos é ser abraçados e sentir que alguém se importa conosco de verdade.
+        </p>
+
+      </div>
+    </article>
+
+    <!-- RODAPÉ DO ARTIGO -->
+    <section class="artigo-rodape">
+      <div class="container">
+        <div class="rodape-info">
+          <strong>Embaixadores do Reino</strong>
+          <span>Portal Evangélico Cristão · Crônica Teológica</span>
+        </div>
+        <a href="index.html" class="btn-voltar" target="_parent">← Voltar ao Portal</a>
+      </div>
+    </section>
+
+    <!-- MAIS CRÔNICAS -->
+    <section class="mais-cronicas" aria-label="Outras crônicas">
+      <div class="container">
+        <h2>Outras Crônicas Teológicas</h2>
+        <div class="cards-mini">
+          <a href="ventodoespírito.HTML" class="card-mini" target="_parent">
+            <div class="card-mini-visual" aria-hidden="true">🕊️</div>
+            <div>
+              <div class="card-mini-label">Crônica Teológica</div>
+              <div class="card-mini-titulo">O vento sopra onde quer</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p><strong>Embaixadores do Reino</strong> · Portal Evangélico Cristão</p>
+    <p style="margin-top:4px;">Edificação · Ensino Bíblico · Evangelização</p>
+  </footer>
+
+</body>
+</html>
